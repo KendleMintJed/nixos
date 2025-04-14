@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+
+  imports = [ inputs.nvf.homeManagerModules.default ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "kendle";
@@ -26,6 +29,32 @@
 
       user.name = "KendleMintJed";
       user.email = "jamie.astonfamily@gmail.com";
+    };
+  };
+
+  programs.nvf = {
+    enable = true;
+    enableManpages = true;
+    settings = {
+      vim = {
+        theme = {
+          enable = true;
+          name = "gruvbox";
+          style = "dark";
+        };
+        
+        statusline.lualine.enable = true;
+        telescope.enable = true;
+        autocomplete.nvim-cmp.enable = true;
+  
+        languages = {
+          enableLSP = true;
+          enableTreesitter = true;
+  
+          nix.enable = true;
+          rust.enable = true;
+        };
+      };
     };
   };
 
