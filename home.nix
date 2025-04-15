@@ -58,14 +58,40 @@
         autocomplete.nvim-cmp.enable = true;
         binds.whichKey.enable = true;
         binds.cheatsheet.enable = true;
-        tabline.nvimBufferline.enable = true;
         treesitter.context.enable = true;
-        notify.nvim-notify.enable = true;
 
-        git = {
-          enable = true;
-          gitsigns.enable = true;
-          gitsigns.codeActions.enable = false;
+        mini = {
+          # Text editing
+          comment.enable = true;
+          move.enable = true;
+          operators.enable = true;
+          pairs.enable = true;
+          splitjoin.enable = true;
+          surround.enable = true;
+
+          # General workflow
+          basics = {
+            enable = true;
+            setupOpts.mappings.move_with_alt = true;
+          };
+          bracketed.enable = true;
+          diff.enable = true;
+          git.enable = true;
+          jump.enable = true;
+          jump2d.enable = true;
+          pick.enable = true;
+          sessions.enable = true;
+          visits.enable = true;
+
+          # Appearance
+          indentscope = {
+            enable = true;
+            setupOpts.draw.delay = 0;
+          };
+          notify.enable = true;
+          starter.enable = true;
+          tabline.enable = true;
+          trailspace.enable = true;
         };
 
         lsp = {
@@ -78,7 +104,10 @@
           enableFormat = true;
           enableTreesitter = true;
 
-          nix.enable = true;
+          nix = {
+            enable = true;
+            lsp.server = "nixd";
+          };
           rust.enable = true;
           rust.crates.enable = true;
         };
@@ -89,16 +118,7 @@
           style = "macchiato";
         };
 
-        visuals = {
-          nvim-cursorline.enable = true;
-          fidget-nvim.enable = true;
-          highlight-undo.enable = true;
-          indent-blankline.enable = true;
-        };
-
-        ui = {
-          noice.enable = true;
-        };
+        ui.noice.enable = true;
       };
     };
   };
