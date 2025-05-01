@@ -269,7 +269,7 @@ in {
       ZVM_VI_ESCAPE_BINDKEY = "jk";
     };
 
-    initExtra = ''
+    initContent = ''
       # Set options
       setopt extended_glob dot_glob interactive_comments no_beep
       zle_highlight=('paste:none')
