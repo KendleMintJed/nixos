@@ -242,8 +242,9 @@ in {
     shellAliases = {
       cd = "z";
       ls = "eza --color=always --icons=always";
+      la = "eza --color=always --icons=always -a";
       ll = "eza --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions";
-      tree = "eza --color=always --icons=always --tree";
+      lt = "eza --color=always --icons=always --tree";
       md = "mkdir";
       lg = "lazygit";
       cls = "clear";
@@ -256,11 +257,11 @@ in {
     plugins = with pkgs; [
       {
         name = "zsh-vi-mode";
-        src = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
+        src = "${zsh-vi-mode}/share/zsh-vi-mode";
       }
       {
         name = "fzf-tab";
-        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+        src = "${zsh-fzf-tab}/share/fzf-tab";
       }
     ];
 
@@ -306,6 +307,7 @@ in {
     zoxide
     fd
     tldr
+    nix-index
 
     zsh-fzf-tab
     zsh-vi-mode
