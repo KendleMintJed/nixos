@@ -270,6 +270,7 @@ in {
 
     localVariables = {
       ZVM_VI_ESCAPE_BINDKEY = "jk";
+      SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
     };
 
     initContent = ''
@@ -348,7 +349,6 @@ in {
   #  /etc/profiles/per-user/kendle/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
   };
 
   # Let Home Manager install and manage itself.
