@@ -275,7 +275,12 @@ in {
     '';
   };
 
-  programs.pay-respects.enable = true;
+  programs.pay-respects = {
+    enable = true;
+    options = [
+      "--nocnf"
+    ];
+  };
 
   programs.kitty = {
     enable = true;
