@@ -59,10 +59,17 @@
 
   programs.git.enable = true;
 
+  programs.yubikey-touch-detector.enable = true;
+
   nixpkgs.config.allowUnfree = true;
+
+  services.pcscd.enable = true;
+  programs.gnupg.agent.enable = true;
 
   environment.systemPackages = with pkgs; [
     mullvad-browser
+    yubioath-flutter
+    yubikey-manager
 
     # Hyprland
     waybar
