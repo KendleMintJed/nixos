@@ -28,12 +28,27 @@ in {
   programs.git = {
     enable = true;
 
-    extraConfig = {
-      # Otherwise git will try to guess a default user identity. see `man git config`.
-      user.useConfigOnly = true;
+    delta.enable = true;
 
-      user.name = "KendleMintJed";
-      user.email = "jamie.astonfamily@gmail.com";
+    extraConfig = {
+      credential.helper = "store";
+      core.editor = "nvim";
+      init.defaultBranch = "main";
+      user = {
+        # Otherwise git will try to guess a default user identity. see `man git config`.
+        useConfigOnly = true;
+
+        name = "KendleMintJed";
+        email = "jamie.astonfamily@gmail.com";
+      };
+    };
+  };
+
+  programs.lazygit = {
+    enable = true;
+    settings.git.paging = {
+      colorArg = "always";
+      pager = "${pkgs.delta}/bin/delta --paging=never";
     };
   };
 
@@ -206,7 +221,6 @@ in {
     bat
     eza
     fzf
-    lazygit
     zoxide
     fd
     tldr
