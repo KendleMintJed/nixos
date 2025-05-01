@@ -1,9 +1,12 @@
 {
   config,
+  lib,
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  mkLuaInline = lib.generators.mkLuaInline;
+in {
   imports = [inputs.nvf.homeManagerModules.default];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -59,6 +62,7 @@
         binds.whichKey.enable = true;
         binds.cheatsheet.enable = true;
         treesitter.context.enable = true;
+        utility.oil-nvim.enable = true;
 
         mini = {
           # Text editing
@@ -86,7 +90,10 @@
           # Appearance
           indentscope = {
             enable = true;
-            setupOpts.draw.delay = 0;
+            setupOpts.draw = {
+              delay = 0;
+              animation = mkLuaInline "function() return 0 end";
+            };
           };
           notify.enable = true;
           starter.enable = true;
@@ -175,6 +182,8 @@
       zle_highlight=('paste:none')
     '';
   };
+
+  programs.pay-respects.enable = true;
 
   programs.kitty = {
     enable = true;
