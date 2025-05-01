@@ -31,7 +31,6 @@ in {
     delta.enable = true;
 
     extraConfig = {
-      credential.helper = "store";
       core.editor = "nvim";
       init.defaultBranch = "main";
       commit.gpgsign = true;
@@ -347,6 +346,7 @@ in {
   #  /etc/profiles/per-user/kendle/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
   };
 
   # Let Home Manager install and manage itself.

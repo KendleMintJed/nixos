@@ -63,8 +63,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.ssh.startAgent = false;
   services.pcscd.enable = true;
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   environment.systemPackages = with pkgs; [
     mullvad-browser
