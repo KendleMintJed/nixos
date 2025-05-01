@@ -25,6 +25,8 @@ in {
 
   home.shell.enableZshIntegration = true;
 
+  programs.firefox.enable = true;
+
   programs.git = {
     enable = true;
 
