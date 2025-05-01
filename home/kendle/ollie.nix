@@ -77,7 +77,6 @@ in {
         binds.whichKey.enable = true;
         binds.cheatsheet.enable = true;
         treesitter.context.enable = true;
-        utility.oil-nvim.enable = true;
 
         mini = {
           # Text editing
@@ -95,6 +94,7 @@ in {
           };
           bracketed.enable = true;
           diff.enable = true;
+          files.enable = true;
           git.enable = true;
           jump.enable = true;
           jump2d.enable = true;
