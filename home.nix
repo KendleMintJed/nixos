@@ -1,8 +1,10 @@
-{ config, pkgs, inputs, ... }:
-
 {
-
-  imports = [ inputs.nvf.homeManagerModules.default ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [inputs.nvf.homeManagerModules.default];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -35,24 +37,67 @@
   programs.nvf = {
     enable = true;
     enableManpages = true;
+
     settings = {
       vim = {
-        theme = {
-          enable = true;
-          name = "gruvbox";
-          style = "dark";
+        options = {
+          shiftwidth = 2;
         };
-        
+
+        keymaps = [
+          {
+            key = "jk";
+            mode = "i";
+            silent = true;
+            action = "<Esc>";
+          }
+        ];
+
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
-  
+        binds.whichKey.enable = true;
+        binds.cheatsheet.enable = true;
+        tabline.nvimBufferline.enable = true;
+        treesitter.context.enable = true;
+        notify.nvim-notify.enable = true;
+
+        git = {
+          enable = true;
+          gitsigns.enable = true;
+          gitsigns.codeActions.enable = false;
+        };
+
+        lsp = {
+          formatOnSave = true;
+          trouble.enable = true;
+        };
+
         languages = {
           enableLSP = true;
+          enableFormat = true;
           enableTreesitter = true;
-  
+
           nix.enable = true;
           rust.enable = true;
+          rust.crates.enable = true;
+        };
+
+        theme = {
+          enable = true;
+          name = "catppuccin";
+          style = "macchiato";
+        };
+
+        visuals = {
+          nvim-cursorline.enable = true;
+          fidget-nvim.enable = true;
+          highlight-undo.enable = true;
+          indent-blankline.enable = true;
+        };
+
+        ui = {
+          noice.enable = true;
         };
       };
     };
@@ -92,11 +137,11 @@
     plugins = with pkgs; [
       {
         name = "zsh-vi-mode";
-	src = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
+        src = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
       }
       {
         name = "fzf-tab";
-	src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
       }
     ];
 
