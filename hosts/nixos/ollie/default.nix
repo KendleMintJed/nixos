@@ -32,8 +32,6 @@
     };
   };
 
-  console.keyMap = "uk";
-
   services.printing.enable = true;
 
   services.pulseaudio.enable = false;
@@ -62,8 +60,6 @@
   programs.git.enable = true;
 
   programs.yubikey-touch-detector.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
 
   programs.ssh.startAgent = false;
   services.pcscd.enable = true;
