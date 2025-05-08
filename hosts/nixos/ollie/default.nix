@@ -76,19 +76,6 @@
     mullvad-browser
     yubioath-flutter
     yubikey-manager
-
-    # Hyprland
-    waybar
-    (
-      waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-      })
-    )
-    kitty
-    mako
-    libnotify
-    swww
-    wofi
   ];
 
   fonts.packages = with pkgs; [
