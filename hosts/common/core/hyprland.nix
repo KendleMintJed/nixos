@@ -4,5 +4,7 @@
   ...
 }: {
   programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  environment.systemPackages = [
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+  ];
 }

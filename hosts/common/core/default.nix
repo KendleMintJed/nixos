@@ -3,6 +3,9 @@
     inputs.home-manager.nixosModules.home-manager
 
     ./grub.nix
+    ./xdg.nix
+    ./hyprland.nix
+    ./audio.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
