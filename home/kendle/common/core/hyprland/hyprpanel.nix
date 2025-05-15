@@ -11,7 +11,6 @@
     enable = true;
     overlay.enable = true;
 
-    systemd.enable = true;
     hyprland.enable = true;
 
     settings = {

@@ -74,12 +74,12 @@ in {
         };
 
         lsp = {
+          enable = true;
           formatOnSave = true;
           trouble.enable = true;
         };
 
         languages = {
-          enableLSP = true;
           enableFormat = true;
           enableTreesitter = true;
 
@@ -87,8 +87,10 @@ in {
             enable = true;
             lsp.server = "nixd";
           };
-          rust.enable = true;
-          rust.crates.enable = true;
+          rust = {
+            enable = true;
+            rust.crates.enable = true;
+          };
         };
 
         theme = {
