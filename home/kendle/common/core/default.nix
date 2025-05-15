@@ -4,10 +4,12 @@
     ./nvf.nix
     ./zsh.nix
     ./firefox.nix
-    ./kitty.nix
+    ./wezterm.nix
     ./lazygit.nix
     ./pay-respects.nix
     ./hyprland
+    ./gtk.nix
+    ./qt.nix
   ];
 
   programs.keepassxc.enable = true;
