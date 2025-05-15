@@ -2,6 +2,7 @@
   imports = [
     ./binds.nix
     ./look-and-feel.nix
+    ./hyprpanel.nix
   ];
 
   programs.wofi.enable = true;
