@@ -10,6 +10,7 @@
     ./hyprland
     ./gtk.nix
     ./qt.nix
+    ./nix-colors.nix
   ];
 
   programs.keepassxc.enable = true;
