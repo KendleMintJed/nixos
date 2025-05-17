@@ -40,6 +40,7 @@
   };
 
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs;};
     users = {
       "kendle" = import (lib.custom.relativeToRoot "home/kendle/ollie.nix");
