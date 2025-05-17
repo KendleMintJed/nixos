@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
 
@@ -7,10 +7,12 @@
       "$mainMod, Q, killactive,"
       "$mainMod, M, exit,"
       "$mainMod, E, exec, $fileManager"
-      "$mainMod, V, togglefloating,"
-      "$mainMod, R, exec, $menu"
+      "$mainMod, F, togglefloating,"
+      "$mainMod, R, exec, pkill wofi || wofi --show drun"
       "$mainMod, P, pseudo, # dwindle"
       "$mainMod, T, togglesplit, # dwindle"
+      "$mainMod, V, exec, pkill wofi || cliphist list | wofi -dmenu | cliphist decode | wl-copy"
+      "$mainMod, Period, exec, pkill wofi || bemoji"
 
       "$mainMod, H, movefocus, l"
       "$mainMod, J, movefocus, d"

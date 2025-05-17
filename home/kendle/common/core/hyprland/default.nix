@@ -7,9 +7,12 @@
   ];
 
   programs.wofi.enable = true;
+  services.cliphist.enable = true;
 
   home.packages = with pkgs; [
     kdePackages.dolphin
+    bemoji
+    wl-clipboard
   ];
 
   wayland.windowManager.hyprland = {
@@ -26,7 +29,6 @@
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
 
       env = [
         "XDG_SESSION_TYPE,wayland"
