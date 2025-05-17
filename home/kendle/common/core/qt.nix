@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{...}: let
   theme = "Adwaita-Dark";
 in {
   qt = {
