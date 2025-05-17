@@ -27,7 +27,7 @@
 
       monitor = ",preferred,auto,1";
 
-      "$terminal" = "kitty";
+      "$terminal" = "wezterm";
       "$fileManager" = "dolphin";
 
       env = [
