@@ -3,6 +3,7 @@
     ./binds.nix
     ./look-and-feel.nix
     ./hyprpanel.nix
+    ./hyprpaper.nix
   ];
 
   programs.wofi.enable = true;
