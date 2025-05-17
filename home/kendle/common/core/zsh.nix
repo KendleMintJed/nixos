@@ -130,6 +130,7 @@
     localVariables = {
       ZVM_VI_ESCAPE_BINDKEY = "jk";
       SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
+      MANPAGER = "nvim +Man!";
     };
 
     initContent = ''
