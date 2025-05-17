@@ -8,6 +8,7 @@
 
   programs.wofi.enable = true;
   services.cliphist.enable = true;
+  services.swaync.enable = true;
 
   home.packages = with pkgs; [
     kdePackages.dolphin
