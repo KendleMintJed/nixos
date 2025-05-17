@@ -28,6 +28,11 @@ in {
           }
         ];
 
+        clipboard = {
+          enable = true;
+          registers = "unnamedplus";
+        };
+
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
