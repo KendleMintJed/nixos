@@ -89,7 +89,7 @@ in {
           };
           rust = {
             enable = true;
-            rust.crates.enable = true;
+            crates.enable = true;
           };
         };
 
