@@ -7,12 +7,19 @@
   imports = lib.flatten [
     ./hardware-configuration.nix
 
+    inputs.nixos-hardware.nixosModules.dell-precision-5560
+
     {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
 
     (map lib.custom.relativeToRoot [
       "hosts/common/core"
     ])
   ];
+
+  boot.extraModprobeConfig = ''
+    options xe force_probe=9a60
+    options i915 force_probe=!9a60
+  '';
 
   networking = {
     hostName = "ollie";
@@ -24,6 +31,15 @@
     wayland.enable = true;
   };
 
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
     };
   };
 
