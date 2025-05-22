@@ -16,10 +16,10 @@
     ])
   ];
 
-  boot.extraModprobeConfig = ''
-    options xe force_probe=9a60
-    options i915 force_probe=!9a60
-  '';
+  # boot.extraModprobeConfig = ''
+  #  options xe force_probe=9a60
+  #  options i915 force_probe=!9a60
+  # '';
 
   networking = {
     hostName = "ollie";
