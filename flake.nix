@@ -46,10 +46,7 @@
           specialArgs = {
             inherit inputs outputs lib;
           };
-          modules = [
-            {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-            ./hosts/nixos/${host}
-          ];
+          modules = [./hosts/nixos/${host}];
         };
       }) (builtins.attrNames (builtins.readDir ./hosts/nixos))
     );
