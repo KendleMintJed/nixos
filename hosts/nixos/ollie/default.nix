@@ -19,14 +19,11 @@
     networkmanager.enable = true;
   };
 
-  services.displayManager.sddm.enable = true;
-
-  services.xserver = {
+  services.displayManager.sddm = {
     enable = true;
+    wayland.enable = true;
+  };
 
-    xkb = {
-      layout = "gb";
-      variant = "";
     };
   };
 
