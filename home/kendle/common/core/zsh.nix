@@ -96,7 +96,10 @@
     enable = true;
     autocd = true;
 
-    history.append = true;
+    history = {
+      append = true;
+      ignoreSpace = true;
+    };
 
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -110,10 +113,6 @@
       md = "mkdir";
       lg = "lazygit";
       cls = "clear";
-    };
-
-    # Like shellAliases but substitutes anywhere on a line.
-    shellGlobalAliases = {
     };
 
     plugins = with pkgs; [
@@ -136,7 +135,7 @@
 
     initContent = ''
       # Set options
-      setopt extended_glob dot_glob interactive_comments no_beep hist_ignore_space
+      setopt extended_glob dot_glob interactive_comments no_beep
       zle_highlight=('paste:none')
     '';
   };
