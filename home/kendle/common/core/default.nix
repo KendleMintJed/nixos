@@ -11,6 +11,7 @@
     ./gtk.nix
     ./qt.nix
     ./nix-colors.nix
+    ./password-store.nix
   ];
 
   programs.keepassxc.enable = true;
