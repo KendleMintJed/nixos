@@ -62,6 +62,13 @@
     };
   };
 
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
   programs.git.enable = true;
 
   programs.yubikey-touch-detector.enable = true;
