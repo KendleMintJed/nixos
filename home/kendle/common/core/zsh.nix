@@ -7,7 +7,10 @@
   home.shell.enableZshIntegration = true;
 
   # Builtin zsh plugins
-  programs.fzf.enable = true;
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = false;
+  };
 
   programs.oh-my-posh = {
     enable = true;
@@ -137,6 +140,7 @@
       # Set options
       setopt extended_glob dot_glob interactive_comments no_beep
       zle_highlight=('paste:none')
+      zvm_after_init_commands+=('source <(${pkgs.fzf}/bin/fzf --zsh)')
     '';
   };
 }
