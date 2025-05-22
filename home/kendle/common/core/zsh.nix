@@ -136,7 +136,7 @@
 
     initContent = ''
       # Set options
-      setopt extended_glob dot_glob interactive_comments no_beep
+      setopt extended_glob dot_glob interactive_comments no_beep hist_ignore_space
       zle_highlight=('paste:none')
     '';
   };
