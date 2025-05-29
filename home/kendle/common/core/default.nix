@@ -22,8 +22,10 @@
     bat
     eza
     fd
+    fselect
     ripgrep
     dust
+    dua
     tldr
     nix-index
   ];
