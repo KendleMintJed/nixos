@@ -29,6 +29,11 @@
     };
 
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+
+    rcheck = {
+      url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./git.nix
     ./nvf.nix
@@ -19,6 +23,8 @@
   services.nextcloud-client.enable = true;
 
   home.packages = with pkgs; [
+    inputs.rcheck.outputs.packages.x86_64-linux.default
+
     bat
     eza
     fd
