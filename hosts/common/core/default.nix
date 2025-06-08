@@ -8,9 +8,15 @@
     ./audio.nix
   ];
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
