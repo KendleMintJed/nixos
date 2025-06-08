@@ -41,6 +41,8 @@
 
   console.keyMap = "uk";
 
+  services.upower.enable = true;
+
   programs.zsh.enable = true;
 
   programs.neovim = {
