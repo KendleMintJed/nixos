@@ -13,6 +13,8 @@
 
     hyprland.enable = true;
 
+    overwrite.enable = true;
+
     settings = {
       bar = {
         launcher.autoDetectIcon = true;
