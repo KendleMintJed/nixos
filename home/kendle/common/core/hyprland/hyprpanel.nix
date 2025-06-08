@@ -14,15 +14,14 @@
     hyprland.enable = true;
 
     settings = {
-      bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar = {
+        launcher.autoDetectIcon = true;
+        clock.format = "%a %d %b %H:%M:%S";
+      };
 
       menus.clock = {
-        time = {
-          military = true;
-          hideSeconds = true;
-        };
-        weather.unit = "metric";
+        time.military = true;
+        weather.enabled = false;
       };
 
       menus.dashboard.directories.enabled = false;
