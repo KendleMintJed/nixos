@@ -11,6 +11,7 @@
     ./xdg.nix
     ./hyprland.nix
     ./audio.nix
+    ./stylix.nix
   ];
 
   hardware = {
