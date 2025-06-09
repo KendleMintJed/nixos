@@ -1,11 +1,14 @@
-{...}: let
+{pkgs, ...}: let
   theme = "Adwaita-Dark";
 in {
   qt = {
     enable = true;
     platformTheme.name = "gtk";
 
-    style.name = theme;
+    style = {
+      name = theme;
+      package = pkgs.adwaita-qt6;
+    };
   };
 
   home.sessionVariables = {

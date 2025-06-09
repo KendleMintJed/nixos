@@ -1,4 +1,9 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
@@ -41,6 +46,13 @@
 
   console.keyMap = "uk";
 
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
+  };
+
   services.upower.enable = true;
 
   programs.zsh.enable = true;
@@ -49,4 +61,13 @@
     enable = true;
     defaultEditor = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "JetBrainsMono Nerd Font";
+      loginBackground = true;
+      background = "${lib.custom.relativeToRoot "media/wallpaper.png"}";
+    })
+  ];
 }
