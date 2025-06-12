@@ -26,6 +26,14 @@
     networkmanager.enable = true;
   };
 
+  boot.initrd.systemd.enable = true;
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024;
+    }
+  ];
+
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
