@@ -96,6 +96,7 @@ in {
             enable = true;
             crates.enable = true;
           };
+          python.enable = true;
         };
 
         theme = {
