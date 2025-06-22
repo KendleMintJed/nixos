@@ -33,5 +33,6 @@
     dua
     tldr
     nix-index
+    vesktop
   ];
 }
