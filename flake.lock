@@ -917,11 +917,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1748476828,
-        "narHash": "sha256-y08eeR8BFDo+WTOsCK7pihFDhjingvWtC0pzH/62tTI=",
+        "lastModified": 1751299142,
+        "narHash": "sha256-ZLMEAlKeiv1fo5rIuhn5ecTetcnenBmwU3BHmIHppqY=",
         "ref": "refs/heads/main",
-        "rev": "559a4f64479cc2e89f15d371243ac37ec05ed38c",
-        "revCount": 8,
+        "rev": "51020e20e5b76a181ddb436c21707ad100ef5ec4",
+        "revCount": 9,
         "type": "git",
         "url": "ssh://git@github.com/KendleMintJed/rcheck.git"
       },
@@ -970,11 +970,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1748399823,
-        "narHash": "sha256-kahD8D5hOXOsGbNdoLLnqCL887cjHkx98Izc37nDjlA=",
+        "lastModified": 1751251399,
+        "narHash": "sha256-y+viCuy/eKKpkX1K2gDvXIJI/yzvy6zA3HObapz9XZ0=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "d68a69dc71bc19beb3479800392112c2f6218159",
+        "rev": "b22d5ee8c60ed1291521f2dde48784edd6bf695b",
         "type": "github"
       },
       "original": {
