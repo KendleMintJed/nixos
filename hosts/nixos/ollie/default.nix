@@ -9,8 +9,6 @@
 
     inputs.nixos-hardware.nixosModules.dell-precision-5560
 
-    {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-
     (map lib.custom.relativeToRoot [
       "hosts/common/core"
     ])

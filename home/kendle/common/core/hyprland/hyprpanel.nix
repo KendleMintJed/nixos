@@ -3,17 +3,9 @@
   pkgs,
   ...
 }: {
-  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
-
-  home.packages = with pkgs; [hyprpanel];
-
   programs.hyprpanel = {
     enable = true;
-    overlay.enable = true;
-
-    hyprland.enable = true;
-
-    overwrite.enable = true;
+    package = inputs.hyprpanel.packages.${pkgs.system}.default;
 
     settings = {
       bar = {

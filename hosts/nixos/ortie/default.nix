@@ -7,8 +7,6 @@
   imports = lib.flatten [
     ./hardware-configuration.nix
 
-    {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
-
     (map lib.custom.relativeToRoot [
       "hosts/common/core"
     ])
