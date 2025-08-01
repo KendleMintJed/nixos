@@ -6,7 +6,7 @@
     ./hyprpaper.nix
   ];
 
-  programs.wofi.enable = true;
+  programs.fuzzel.enable = true;
   services.cliphist.enable = true;
 
   home.packages = with pkgs; [

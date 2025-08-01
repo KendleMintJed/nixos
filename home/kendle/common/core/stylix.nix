@@ -10,7 +10,7 @@
       lazygit.enable = true;
       mpv.enable = true;
       wezterm.enable = true;
-      wofi.enable = true;
+      fuzzel.enable = true;
     };
   };
 }
