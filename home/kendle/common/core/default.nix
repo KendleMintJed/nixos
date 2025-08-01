@@ -34,5 +34,6 @@
     tldr
     nix-index
     vesktop
+    tor-browser
   ];
 }
