@@ -35,5 +35,6 @@
     nix-index
     vesktop
     tor-browser
+    fluffychat
   ];
 }
