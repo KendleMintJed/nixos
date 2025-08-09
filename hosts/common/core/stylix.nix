@@ -6,11 +6,10 @@
   imports = [inputs.stylix.nixosModules.stylix];
   stylix = {
     enable = true;
-    autoEnable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    polarity = "dark";
     targets = {
-      gtk.enable = true;
-      qt.enable = true;
+      grub.enable = false;
     };
   };
 }

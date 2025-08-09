@@ -14,6 +14,7 @@
     ./hyprland
     ./password-store.nix
     ./stylix.nix
+    ./gtk.nix
   ];
 
   programs.keepassxc.enable = true;
