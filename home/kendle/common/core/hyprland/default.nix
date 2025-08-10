@@ -36,6 +36,7 @@
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "GTK_CSD,0"
       ];
 
       input = {
