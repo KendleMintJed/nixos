@@ -86,12 +86,6 @@
     enableSSHSupport = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    mullvad-browser
-    yubioath-flutter
-    yubikey-manager
-  ];
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];

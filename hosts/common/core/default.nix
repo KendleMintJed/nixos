@@ -70,5 +70,8 @@
       loginBackground = true;
       background = "${lib.custom.relativeToRoot "media/wallpaper.png"}";
     })
+    mullvad-browser
+    yubioath-flutter
+    yubikey-manager
   ];
 }
