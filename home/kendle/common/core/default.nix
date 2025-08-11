@@ -27,7 +27,7 @@
   programs.bat.enable = true;
 
   home.packages = with pkgs; [
-    inputs.rcheck.outputs.packages.x86_64-linux.default
+    inputs.rcheck.outputs.packages.${pkgs.system}.default
 
     eza
     fd
