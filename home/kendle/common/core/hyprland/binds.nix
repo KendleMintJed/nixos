@@ -13,6 +13,7 @@
       "$mainMod, T, togglesplit, # dwindle"
       "$mainMod, V, exec, pkill fuzzel || cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
       "$mainMod, Period, exec, pkill fuzzel || bemoji"
+      "CTRL ALT, L, exec, hyprlock"
 
       "$mainMod, H, movefocus, l"
       "$mainMod, J, movefocus, d"

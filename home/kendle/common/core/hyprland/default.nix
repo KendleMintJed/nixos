@@ -6,6 +6,8 @@
   ];
 
   services.hyprpaper.enable = true;
+  programs.hyprlock.enable = true;
+
   programs.fuzzel.enable = true;
   services.cliphist.enable = true;
 
