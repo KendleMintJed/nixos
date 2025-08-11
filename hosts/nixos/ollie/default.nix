@@ -31,6 +31,11 @@
       size = 32 * 1024;
     }
   ];
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=1h
+    SuspendState=mem
+  '';
+  services.logind.lidSwitch = "suspend-then-hibernate";
 
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
