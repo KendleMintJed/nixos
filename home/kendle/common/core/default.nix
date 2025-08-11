@@ -15,7 +15,10 @@
     ./password-store.nix
     ./stylix.nix
     ./gtk.nix
+    ./nixcord.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   programs.keepassxc.enable = true;
 
@@ -34,7 +37,6 @@
     dua
     tldr
     nix-index
-    vesktop
     tor-browser
     fluffychat
   ];

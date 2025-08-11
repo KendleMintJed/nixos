@@ -8,6 +8,7 @@
       };
 
       nvf.enable = false;
+      nixcord.enable = false;
     };
   };
 }
