@@ -3,9 +3,9 @@
     ./binds.nix
     ./look-and-feel.nix
     ./hyprpanel.nix
-    ./hyprpaper.nix
   ];
 
+  services.hyprpaper.enable = true;
   programs.fuzzel.enable = true;
   services.cliphist.enable = true;
 

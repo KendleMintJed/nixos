@@ -68,7 +68,7 @@
       flavor = "mocha";
       font = "JetBrainsMono Nerd Font";
       loginBackground = true;
-      background = "${lib.custom.relativeToRoot "media/wallpaper.png"}";
+      background = lib.custom.relativeToRoot "media/wallpaper.png";
     })
     mullvad-browser
     yubioath-flutter
