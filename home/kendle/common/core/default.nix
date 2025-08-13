@@ -39,5 +39,6 @@
     nix-index
     tor-browser
     fluffychat
+    protonvpn-gui
   ];
 }
