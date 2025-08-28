@@ -1,34 +1,22 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./git.nix
     ./nvf.nix
     ./zsh.nix
-    ./firefox.nix
-    ./wezterm.nix
     ./lazygit.nix
     ./pay-respects.nix
-    ./hyprland
     ./password-store.nix
     ./stylix.nix
-    ./gtk.nix
-    ./nixcord.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  programs.home-manager.enable = true;
 
-  programs.keepassxc.enable = true;
-
-  services.nextcloud-client.enable = true;
+  home.username = "kendle";
+  home.homeDirectory = "/home/kendle";
 
   programs.bat.enable = true;
 
   home.packages = with pkgs; [
-    inputs.rcheck.outputs.packages.${pkgs.system}.default
-
     eza
     fd
     fselect
@@ -37,8 +25,7 @@
     dua
     tldr
     nix-index
-    tor-browser
-    fluffychat
-    protonvpn-gui
   ];
+
+  home.stateVersion = "24.11";
 }

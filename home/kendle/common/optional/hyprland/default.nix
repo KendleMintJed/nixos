@@ -10,6 +10,7 @@
 
   programs.fuzzel.enable = true;
   services.cliphist.enable = true;
+  services.upower.enable = true;
 
   home.packages = with pkgs; [
     kdePackages.dolphin

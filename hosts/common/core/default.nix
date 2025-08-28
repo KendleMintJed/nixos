@@ -5,25 +5,9 @@
   ...
 }: {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
-
-    ./grub.nix
     ./xdg.nix
-    ./hyprland.nix
-    ./audio.nix
     ./stylix.nix
   ];
-
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -47,31 +31,16 @@
 
   console.keyMap = "uk";
 
-  services.displayManager.sddm = {
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
     enable = true;
-    wayland.enable = true;
-    theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
+    enableSSHSupport = true;
   };
-
-  services.upower.enable = true;
-
-  programs.zsh.enable = true;
 
   programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "JetBrainsMono Nerd Font";
-      loginBackground = true;
-      background = lib.custom.relativeToRoot "media/wallpaper.png";
-    })
-    mullvad-browser
-    yubioath-flutter
-    yubikey-manager
-  ];
+  system.stateVersion = "25.05";
 }

@@ -67,7 +67,7 @@
         name = host;
         value = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs lib;
+            inherit inputs outputs lib host;
           };
           modules = [./hosts/nixos/${host}];
         };
