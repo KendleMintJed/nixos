@@ -20,6 +20,7 @@
     tor-browser
     protonvpn-gui
     fluffychat
+    obsidian
   ];
 
   wayland.windowManager.hyprland = {

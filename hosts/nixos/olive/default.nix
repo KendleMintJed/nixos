@@ -9,7 +9,6 @@
 
     (map lib.custom.relativeToRoot [
       "hosts/common/core"
-      "hosts/common/users/kendle.nix"
     ])
   ];
 

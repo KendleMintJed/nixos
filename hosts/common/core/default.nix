@@ -1,9 +1,4 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   imports = lib.flatten [
     ./xdg.nix
     ./stylix.nix

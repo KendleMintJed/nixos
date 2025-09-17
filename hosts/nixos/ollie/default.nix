@@ -74,10 +74,4 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
-
-  system.stateVersion = "25.05";
 }
