@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./binds.nix
     ./look-and-feel.nix
@@ -21,6 +25,8 @@
     protonvpn-gui
     fluffychat
     obsidian
+    cloudflare-warp
+    qbittorrent
   ];
 
   wayland.windowManager.hyprland = {
