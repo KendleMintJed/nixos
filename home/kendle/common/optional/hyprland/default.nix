@@ -25,7 +25,6 @@
     protonvpn-gui
     fluffychat
     obsidian
-    cloudflare-warp
     qbittorrent
   ];
 
