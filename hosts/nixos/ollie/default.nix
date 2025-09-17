@@ -11,6 +11,10 @@
 
     (map lib.custom.relativeToRoot [
       "hosts/common/core"
+      "hosts/common/optional/grub.nix"
+      "hosts/common/optional/sddm.nix"
+      "hosts/common/optional/audio.nix"
+      "hosts/common/optional/hyprland.nix"
     ])
   ];
 
@@ -52,21 +56,6 @@
   services.printing.enable = true;
 
   security.rtkit.enable = true;
-
-  users.users.kendle = {
-    isNormalUser = true;
-    description = "kendle";
-    extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.zsh;
-  };
-
-  home-manager = {
-    backupFileExtension = "backup";
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "kendle" = import (lib.custom.relativeToRoot "home/kendle/ollie.nix");
-    };
-  };
 
   programs.steam = {
     enable = true;

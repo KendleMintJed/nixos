@@ -9,6 +9,8 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   programs.zsh.enable = true;
 
   users.users.kendle = {
@@ -21,7 +23,7 @@
 
   home-manager = {
     backupFileExtension = "backup";
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs pkgs;};
     users = {
       "kendle" = import (lib.custom.relativeToRoot "home/kendle/${host}.nix");
     };

@@ -1,12 +1,12 @@
 {...}: {
   imports = [
     ./common/core
+    ./common/optional/gtk.nix
+    ./common/optional/firefox.nix
+    ./common/optional/nixcord.nix
+    ./common/optional/wezterm.nix
+    ./common/optional/hyprland
   ];
-
-  programs.home-manager.enable = true;
-
-  home.username = "kendle";
-  home.homeDirectory = "/home/kendle";
 
   home.file = {
   };

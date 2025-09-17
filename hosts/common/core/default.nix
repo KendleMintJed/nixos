@@ -4,9 +4,13 @@
   lib,
   ...
 }: {
-  imports = [
+  imports = lib.flatten [
     ./xdg.nix
     ./stylix.nix
+
+    (map lib.custom.relativeToRoot [
+      "hosts/common/users/kendle.nix"
+    ])
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
