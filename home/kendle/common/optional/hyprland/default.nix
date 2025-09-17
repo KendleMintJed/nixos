@@ -26,6 +26,9 @@
     fluffychat
     obsidian
     qbittorrent
+    mullvad-browser
+    yubioath-flutter
+    yubikey-manager
   ];
 
   wayland.windowManager.hyprland = {
