@@ -10,6 +10,17 @@
 
   xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
 
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
+
   environment.systemPackages = [
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
