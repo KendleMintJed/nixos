@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-fix-catppuccin-sddm.url = "github:magicquark/nixpkgs/fix-catppuccin-sddm";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -60,14 +62,16 @@
     inherit (self) outputs;
     lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
   in {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
     nixosConfigurations = builtins.listToAttrs (
       map (host: {
         name = host;
         value = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs lib host;
+            pkgs-fix = import inputs.nixpkgs-fix-catppuccin-sddm {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
           };
           modules = [./hosts/nixos/${host}];
         };

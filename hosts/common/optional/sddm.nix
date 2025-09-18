@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-fix,
   lib,
   ...
 }: {
@@ -10,7 +11,7 @@
     package = pkgs.kdePackages.sddm;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-fix; [
     (catppuccin-sddm.override {
       flavor = "mocha";
       font = "JetBrainsMono Nerd Font";

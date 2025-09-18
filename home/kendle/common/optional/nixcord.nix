@@ -23,7 +23,7 @@
         crashHandler.enable = true;
         disableCallIdle.enable = true;
         experiments.enable = true;
-        emoteCloner.enable = true;
+        expressionCloner.enable = true;
         fakeNitro.enable = true;
         favoriteEmojiFirst.enable = true;
         favoriteGifSearch.enable = true;
@@ -39,7 +39,7 @@
         gameActivityToggle.enable = true;
         gifPaste.enable = true;
         greetStickerPicker.enable = true;
-        hideAttachments.enable = true;
+        hideMedia.enable = true;
         iLoveSpam.enable = true;
         imageLink.enable = true;
         imageZoom.enable = true;
