@@ -16,6 +16,8 @@
   programs.fuzzel.enable = true;
   services.cliphist.enable = true;
 
+  programs.keepassxc.enable = true;
+
   home.packages = with pkgs; [
     inputs.rcheck.outputs.packages.${pkgs.system}.default
 
