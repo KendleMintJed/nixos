@@ -8,11 +8,18 @@
     ./common/optional/hyprland
   ];
 
-  wayland.windowManager.hyprland.settings.monitor = [
-    "DP-4,preferred,0x0,1"
-    "DP-5,preferred,2560x0,1"
-    "eDP-1,preferred,5120x0,1"
-  ];
+  wayland.windowManager.hyprland.settings = {
+    monitor = [
+      "DP-5,preferred,0x0,1"
+      "DP-4,preferred,2560x0,1"
+      "eDP-1,preferred,5120x0,1"
+    ];
+    workspace = [
+      "1, monitor:DP-5"
+      "2, monitor:DP-4, default:true"
+      "3, monitor:eDP-1"
+    ];
+  };
 
   home.file = {
   };
