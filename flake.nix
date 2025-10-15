@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-fix-catppuccin-sddm.url = "github:magicquark/nixpkgs/fix-catppuccin-sddm";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,10 +66,6 @@
         value = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs lib host;
-            pkgs-fix = import inputs.nixpkgs-fix-catppuccin-sddm {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
           };
           modules = [./hosts/nixos/${host}];
         };
