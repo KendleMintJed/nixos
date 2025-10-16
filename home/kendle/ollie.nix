@@ -6,6 +6,7 @@
     ./common/optional/nixcord.nix
     ./common/optional/wezterm.nix
     ./common/optional/hyprland
+    ./common/optional/vscode
   ];
 
   wayland.windowManager.hyprland.settings = {

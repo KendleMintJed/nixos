@@ -15,6 +15,7 @@
 
       nvf.enable = false;
       nixcord.enable = false;
+      vscode.enable = false;
     };
   };
 }
