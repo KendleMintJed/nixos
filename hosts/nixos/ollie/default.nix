@@ -38,7 +38,7 @@
     HibernateDelaySec=1h
     SuspendState=mem
   '';
-  services.logind.lidSwitch = "suspend-then-hibernate";
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
 
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {

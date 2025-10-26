@@ -2,9 +2,7 @@
   programs.git = {
     enable = true;
 
-    delta.enable = true;
-
-    extraConfig = {
+    settings = {
       core.editor = "nvim";
       init.defaultBranch = "main";
       commit.gpgsign = true;
@@ -17,5 +15,10 @@
         signingkey = "0C0AE68B63FA8F1757B97F9E31BB390EC1A9FAB5";
       };
     };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }
