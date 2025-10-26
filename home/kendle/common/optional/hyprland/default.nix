@@ -32,6 +32,7 @@
     mullvad-browser
     yubioath-flutter
     yubikey-manager
+    heroic
   ];
 
   wayland.windowManager.hyprland = {
