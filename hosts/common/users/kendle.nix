@@ -23,7 +23,7 @@
 
   home-manager = {
     backupFileExtension = "backup";
-    extraSpecialArgs = {inherit inputs pkgs;};
+    extraSpecialArgs = {inherit inputs pkgs host;};
     users = {
       "kendle" = import (lib.custom.relativeToRoot "home/kendle/${host}.nix");
     };

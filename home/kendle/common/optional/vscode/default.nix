@@ -3,7 +3,7 @@
   lib,
   ...
 } @ args: let
-  profileFiles = [./rust.nix ./nix.nix];
+  profileFiles = [./rust.nix];
   getFileName = path: with builtins; replaceStrings [".nix"] [""] (baseNameOf path);
   mergeProfiles = base: super: let
     merged = lib.recursiveUpdate base super;
@@ -33,5 +33,10 @@ in {
         }
       ]);
   };
-  home.sessionVariables.NIXOS_OZONE_WL = "1";
+  home = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    packages = with pkgs; [
+      nixd
+    ];
+  };
 }
