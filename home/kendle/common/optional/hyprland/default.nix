@@ -20,12 +20,12 @@
 
   home.packages = with pkgs; [
     inputs.rcheck.outputs.packages.${pkgs.system}.default
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.protonvpn-gui
 
     kdePackages.dolphin
     bemoji
     wl-clipboard
     tor-browser
-    protonvpn-gui
     fluffychat
     obsidian
     qbittorrent
