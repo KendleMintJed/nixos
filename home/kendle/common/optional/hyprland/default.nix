@@ -18,6 +18,8 @@
 
   programs.keepassxc.enable = true;
 
+  services.nextcloud-client.enable = true;
+
   home.packages = with pkgs; [
     inputs.rcheck.outputs.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.protonvpn-gui
