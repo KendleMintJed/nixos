@@ -9,6 +9,8 @@
     ./binds.nix
     ./look-and-feel.nix
     ./hyprpanel.nix
+
+    ../vscode
   ];
 
   services.hyprpaper.enable = true;
