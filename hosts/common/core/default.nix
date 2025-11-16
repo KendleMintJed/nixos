@@ -1,4 +1,9 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = lib.flatten [
     ./xdg.nix
     ./stylix.nix
@@ -7,6 +12,10 @@
       "hosts/common/users/kendle.nix"
     ])
   ];
+
+  _module.args = {
+    pkgs-stable = import inputs.nixpkgs-stable {system = pkgs.stdenv.hostPlatform.system;};
+  };
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
