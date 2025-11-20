@@ -22,7 +22,10 @@
     download-buffer-size = 524288000;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [inputs.nix-vscode-extensions.overlays.default];
+  };
 
   time.timeZone = "Europe/London";
 

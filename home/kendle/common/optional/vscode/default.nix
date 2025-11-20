@@ -1,9 +1,10 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 } @ args: let
-  profileFiles = [./rust.nix];
+  profileFiles = [./rust.nix ./java.nix];
   getFileName = path: with builtins; replaceStrings [".nix"] [""] (baseNameOf path);
   mergeProfiles = base: super: let
     merged = lib.recursiveUpdate base super;

@@ -8,6 +8,9 @@ in {
   extensions = with pkgs.vscode-extensions; [
     vscodevim.vim
     usernamehw.errorlens
+    github.copilot
+    github.copilot-chat
+    shardulm94.trailing-spaces
     arrterian.nix-env-selector
     jnoortheen.nix-ide
   ];
@@ -41,5 +44,6 @@ in {
         };
       };
     };
+    "nixEnvSelector.useFlakes" = true;
   };
 }
