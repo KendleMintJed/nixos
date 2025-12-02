@@ -45,5 +45,7 @@ in {
       };
     };
     "nixEnvSelector.useFlakes" = true;
+    "explorer.confirmDelete" = false;
+    "git.enableSmartCommit" = true;
   };
 }
