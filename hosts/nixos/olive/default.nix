@@ -34,4 +34,6 @@
       KbdInteractiveAuthentication = false;
     };
   };
+
+  virtualisation.docker.enable = true;
 }
