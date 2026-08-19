@@ -8,7 +8,7 @@
   imports = [
     ./binds.nix
     ./look-and-feel.nix
-    ./hyprpanel.nix
+    ./wayle.nix
 
     ../vscode
   ];
@@ -30,7 +30,7 @@
     bemoji
     wl-clipboard
     tor-browser
-    pkgs-stable.protonvpn-gui
+    proton-vpn
     fluffychat
     obsidian
     qbittorrent
@@ -42,6 +42,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     systemd = {
       enable = true;
       variables = ["--all"];

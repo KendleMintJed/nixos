@@ -3,59 +3,27 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    nvf = {
-      url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nvf.url = "github:notashelf/nvf";
 
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    stylix.url = "github:nix-community/stylix";
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
 
-    rose-pine-hyprcursor = {
-      url = "github:ndom91/rose-pine-hyprcursor";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
 
-    rcheck = {
-      url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixcord.url = "github:kaylorben/nixcord";
 
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = {

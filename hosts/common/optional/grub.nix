@@ -4,8 +4,6 @@
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot";
 
-    systemd-boot.enable = false;
-
     grub = {
       enable = true;
       device = "nodev";

@@ -3,8 +3,9 @@
 
   programs.nixcord = {
     enable = true;
-    vesktop.enable = true;
+    discord.equicord.enable = true;
     config = {
+      themeLinks = ["https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"];
       plugins = {
         accountPanelServerProfile.enable = true;
         alwaysExpandRoles.enable = true;
@@ -16,7 +17,7 @@
         betterUploadButton.enable = true;
         biggerStreamPreview.enable = true;
         callTimer.enable = true;
-        clearURLs.enable = true;
+        clearUrls.enable = true;
         colorSighted.enable = true;
         copyEmojiMarkdown.enable = true;
         copyFileContents.enable = true;
@@ -26,14 +27,14 @@
         expressionCloner.enable = true;
         fakeNitro.enable = true;
         favoriteEmojiFirst.enable = true;
-        favoriteGifSearch.enable = true;
+        # favoriteGifSearch.enable = true;
         fixCodeblockGap.enable = true;
         fixImagesQuality.enable = true;
         fixSpotifyEmbeds.enable = true;
         fixYoutubeEmbeds.enable = true;
         forceOwnerCrown.enable = true;
         friendInvites.enable = true;
-        friendsSince.enable = true;
+        # friendsSince.enable = true;
         fullSearchContext.enable = true;
         fullUserInChatbox.enable = true;
         gameActivityToggle.enable = true;
@@ -44,7 +45,7 @@
         imageLink.enable = true;
         imageZoom.enable = true;
         implicitRelationships.enable = true;
-        invisibleChat.enable = true;
+        # invisibleChat.enable = true;
         keepCurrentChannel.enable = true;
         loadingQuotes.enable = true;
         memberCount.enable = true;
@@ -52,7 +53,7 @@
         messageLatency.enable = true;
         messageLinkEmbeds.enable = true;
         messageLogger.enable = true;
-        mutualGroupDMs.enable = true;
+        mutualGroupDms.enable = true;
         newGuildSettings.enable = true;
         noDevtoolsWarning.enable = true;
         noF1.enable = true;
@@ -67,7 +68,7 @@
         permissionFreeWill.enable = true;
         permissionsViewer.enable = true;
         pictureInPicture.enable = true;
-        pinDMs.enable = true;
+        pinDms.enable = true;
         platformIndicators.enable = true;
         previewMessage.enable = true;
         quickMention.enable = true;
@@ -79,7 +80,7 @@
         replyTimestamp.enable = true;
         revealAllSpoilers.enable = true;
         reverseImageSearch.enable = true;
-        reviewDB.enable = true;
+        reviewDb.enable = true;
         sendTimestamps.enable = true;
         serverInfo.enable = true;
         serverListIndicators.enable = true;
@@ -91,8 +92,8 @@
         showMeYourName.enable = true;
         showTimeoutDuration.enable = true;
         silentMessageToggle.enable = true;
-        sortFriendRequests.enable = true;
-        spotifyControls.enable = true;
+        # sortFriendRequests.enable = true;
+        # spotifyControls.enable = true;
         spotifyCrack.enable = true;
         spotifyShareCommands.enable = true;
         startupTimings.enable = true;
@@ -108,7 +109,7 @@
         userVoiceShow.enable = true;
         validReply.enable = true;
         validUser.enable = true;
-        vencordToolbox.enable = true;
+        # vencordToolbox.enable = true;
         viewIcons.enable = true;
         viewRaw.enable = true;
         voiceDownload.enable = true;

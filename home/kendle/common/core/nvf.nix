@@ -90,11 +90,11 @@ in {
 
           nix = {
             enable = true;
-            lsp.server = "nixd";
+            lsp.servers = ["nixd"];
           };
           rust = {
             enable = true;
-            crates.enable = true;
+            extensions.crates-nvim.enable = true;
           };
           python.enable = true;
         };
