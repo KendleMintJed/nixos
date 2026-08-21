@@ -2,48 +2,40 @@
   description = "KendleMintJed's Nix Config";
 
   inputs = {
+    # Package repos
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
-
-    home-manager.url = "github:nix-community/home-manager";
-
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-
-    nvf.url = "github:notashelf/nvf";
-
-    stylix.url = "github:nix-community/stylix";
-
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-
-    rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
-
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-
-    nixcord.url = "github:kaylorben/nixcord";
-
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    # Utility
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+    # Applications
+    home-manager.url = "github:nix-community/home-manager";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nvf.url = "github:notashelf/nvf";
+    stylix.url = "github:nix-community/stylix";
+    nixcord.url = "github:kaylorben/nixcord";
+    rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
-  in {
-    nixosConfigurations = builtins.listToAttrs (
-      map (host: {
-        name = host;
-        value = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs lib host;
-          };
-          modules = [./hosts/nixos/${host}];
-        };
-      }) (builtins.attrNames (builtins.readDir ./hosts/nixos))
-    );
-  };
+  outputs = inputs: let
+    inherit (inputs.nixpkgs) lib;
+    inherit (lib.fileset) toList fileFilter;
+
+    isNixModule = file:
+      file.hasExt "nix"
+      && file.name != "flake.nix"
+      && !lib.hasPrefix "_" file.name;
+
+    importTree = path:
+      toList (fileFilter isNixModule path);
+
+    mkFlake = inputs.flake-parts.lib.mkFlake {inherit inputs;};
+  in
+    mkFlake {
+      systems = ["x86_64-linux"];
+      imports = importTree ./.;
+    };
 }
