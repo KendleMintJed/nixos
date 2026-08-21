@@ -1,0 +1,16 @@
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.homeModules.stylix = {pkgs, ...}: {
+    imports = [inputs.stylix.homeModules.stylix];
+    stylix = {
+      enable = true;
+      autoEnable = false;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      polarity = "dark";
+      image = self.media.wallpaper;
+    };
+  };
+}
