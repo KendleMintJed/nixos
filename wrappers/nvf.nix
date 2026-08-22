@@ -1,12 +1,16 @@
-{inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   perSystem = {
     pkgs,
     lib,
     ...
-  }: let
-    mkLuaInline = lib.generators.mkLuaInline;
-  in {
-    packages.neovim =
+  }: {
+    packages.neovim = let
+      mkLuaInline = lib.generators.mkLuaInline;
+    in
       (inputs.nvf.lib.neovimConfiguration {
         inherit pkgs;
 
@@ -15,7 +19,10 @@
             config = {
               vim = {
                 options = {
+                  tabstop = 2;
                   shiftwidth = 2;
+                  expandtab = true;
+                  foldlevel = 99;
                 };
 
                 keymaps = [
@@ -29,6 +36,7 @@
 
                 clipboard = {
                   enable = true;
+                  providers.wl-copy.enable = true;
                   registers = "unnamedplus";
                 };
 
@@ -37,7 +45,17 @@
                 autocomplete.nvim-cmp.enable = true;
                 binds.whichKey.enable = true;
                 binds.cheatsheet.enable = true;
-                treesitter.context.enable = true;
+                treesitter = {
+                  fold = true;
+                  indent.excludes = ["nix"];
+                  context = {
+                    enable = true;
+                    setupOpts = {
+                      separator = null;
+                      max_lines = "10%";
+                    };
+                  };
+                };
 
                 mini = {
                   # Text editing
@@ -82,6 +100,17 @@
                   enable = true;
                   formatOnSave = true;
                   trouble.enable = true;
+                  lspconfig.enable = true;
+
+                  servers.nixd.settings.nixd = let
+                    thisFlake = "(builtins.getFlake \"${self}\")";
+                  in {
+                    nixpkgs.expr = "import ${thisFlake}.inputs.nixpkgs {}";
+                    options = {
+                      nixos.expr = "${thisFlake}.nixosConfigurations.ollie.options";
+                      home-manager.expr = "${thisFlake}.nixosConfigurations.ollie.options.home-manager.users.type.getSubOptions []";
+                    };
+                  };
                 };
 
                 languages = {
@@ -103,9 +132,18 @@
                   enable = true;
                   name = "catppuccin";
                   style = "mocha";
+                  transparent = true;
                 };
 
-                ui.noice.enable = true;
+                ui = {
+                  noice = {
+                    enable = true;
+                    setupOpts.lsp.signature.enabled = true;
+                  };
+                  nvim-ufo.enable = true;
+                };
+
+                utility.snacks-nvim.enable = true;
               };
             };
           })
