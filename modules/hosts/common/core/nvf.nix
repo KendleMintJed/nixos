@@ -1,21 +1,30 @@
-{self, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.nvf = {
     lib,
     pkgs,
+    host,
     ...
-  }: let
-    myNeovim = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
-  in {
+  }: {
+    imports = [inputs.nvf.nixosModules.default];
+
+    programs.nvf = {
+      enable = true;
+      defaultEditor = true;
+      enableManpages = true;
+      settings = self.lib.mkNvfConfig {inherit lib host;};
+    };
+
     environment = {
       systemPackages = with pkgs; [
-        myNeovim
         tree-sitter
         ripgrep
+        imagemagick
+        fd
       ];
-      sessionVariables = {
-        EDITOR = lib.getExe myNeovim;
-        VISUAL = lib.getExe myNeovim;
-      };
     };
   };
 }

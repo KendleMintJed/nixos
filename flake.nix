@@ -14,7 +14,10 @@
     # Applications
     home-manager.url = "github:nix-community/home-manager";
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    nvf.url = "github:notashelf/nvf";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix.url = "github:nix-community/stylix";
     nixcord.url = "github:kaylorben/nixcord";
     rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
