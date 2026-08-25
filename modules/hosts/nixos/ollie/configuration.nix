@@ -11,7 +11,7 @@
       core
       grub
       sddm
-      self.nixosModules.niri
+      niri
     ];
 
     # boot.extraModprobeConfig = ''
@@ -35,14 +35,25 @@
 
     nixpkgs.config.allowUnfree = true;
     services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia = {
-      modesetting.enable = true;
-      open = false;
-      prime = {
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
+    hardware = {
+      nvidia = {
+        modesetting.enable = true;
+        open = false;
+        prime = {
+          offload = {
+            enable = true;
+            enableOffloadCmd = true;
+          };
         };
+      };
+      bluetooth = {
+        enable = true;
+        powerOnBoot =
+          true;
+      };
+      graphics = {
+        enable = true;
+        enable32Bit = true;
       };
     };
 
