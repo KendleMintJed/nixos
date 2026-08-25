@@ -18,13 +18,11 @@
       settings = self.lib.mkNvfConfig {inherit lib host;};
     };
 
-    environment = {
-      systemPackages = with pkgs; [
-        tree-sitter
-        ripgrep
-        imagemagick
-        fd
-      ];
-    };
+    environment.systemPackages = with pkgs; [
+      tree-sitter
+      ripgrep
+      imagemagick
+      fd
+    ];
   };
 }
