@@ -6,10 +6,9 @@
   }: {
     home.shell.enableZshIntegration = true;
 
-    programs.fzf = {
-      enable = true;
-      enableZshIntegration = false;
-    };
+    programs.devenv.enable = true;
+
+    programs.fzf.enable = true;
 
     programs.zoxide.enable = true;
 
