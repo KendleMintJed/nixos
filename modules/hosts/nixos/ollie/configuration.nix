@@ -26,6 +26,8 @@
       }
     ];
 
+    services.upower.enable = true;
+
     boot.initrd.systemd.enable = true;
     services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
     systemd.sleep.settings.Sleep = {
