@@ -8,6 +8,7 @@
         shiftwidth = 2;
         expandtab = true;
         foldlevel = 99;
+        exrc = true;
       };
 
       keymaps = [
@@ -91,14 +92,19 @@
       languages = {
         enableFormat = true;
         enableTreesitter = true;
+        enableExtraDiagnostics = true;
 
         nix.enable = true;
-
         rust = {
           enable = true;
           extensions.crates-nvim.enable = true;
         };
         python.enable = true;
+        markdown = {
+          enable = true;
+          format.type = ["rumdl"];
+          extraDiagnostics.types = ["rumdl"];
+        };
       };
 
       theme = {
