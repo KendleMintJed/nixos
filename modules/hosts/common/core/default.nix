@@ -5,10 +5,11 @@
     ...
   }: {
     imports = with self.nixosModules; [
+      kendle
       xdg
       stylix
       nvf
-      kendle
+      septabee
     ];
 
     environment.systemPackages = with pkgs; [
