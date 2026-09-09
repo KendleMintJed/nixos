@@ -61,6 +61,12 @@
           "Mod+Q".close-window = _: {};
           "Mod+H".focus-column-left = _: {};
           "Mod+L".focus-column-right = _: {};
+          "Mod+J".focus-workspace-down = _: {};
+          "Mod+K".focus-workspace-up = _: {};
+          "Mod+Shift+H".move-column-left = _: {};
+          "Mod+Shift+L".move-column-right = _: {};
+          "Mod+Shift+J".move-workspace-down = _: {};
+          "Mod+Shift+K".move-workspace-up = _: {};
           "Mod+Shift+S".screenshot = _: {};
           "Mod+F".maximize-column = _: {};
           "Mod+Shift+F".fullscreen-window = _: {};
