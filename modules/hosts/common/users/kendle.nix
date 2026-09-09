@@ -8,6 +8,7 @@
   ];
 
   flake.nixosModules.kendle = {
+    system,
     pkgs,
     host,
     ...
@@ -28,7 +29,7 @@
 
     home-manager = {
       backupFileExtension = "backup";
-      extraSpecialArgs = {inherit host;};
+      extraSpecialArgs = {inherit host system;};
       users = {
         "kendle" = self.homeModules.kendle;
       };
