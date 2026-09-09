@@ -1,5 +1,6 @@
 {self, ...}: {
   flake.homeModules.zsh = {
+    system,
     pkgs,
     lib,
     ...
@@ -14,7 +15,7 @@
 
     programs.oh-my-posh = {
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.oh-my-posh;
+      package = self.packages.${system}.oh-my-posh;
     };
 
     programs.zsh = {
@@ -29,12 +30,14 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      shellAliases = {
+      shellAliases = let
+        ezaExe = lib.getExe pkgs.eza;
+      in {
         cd = "z";
-        ls = "${lib.getExe pkgs.eza} --color=always --icons=always";
-        la = "${lib.getExe pkgs.eza} --color=always --icons=always -a";
-        ll = "${lib.getExe pkgs.eza} --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions";
-        lt = "${lib.getExe pkgs.eza} --color=always --icons=always --tree";
+        ls = "${ezaExe} --color=always --icons=always";
+        la = "${ezaExe} --color=always --icons=always -a";
+        ll = "${ezaExe} --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions";
+        lt = "${ezaExe} --color=always --icons=always --tree";
         md = "mkdir";
         lg = "${lib.getExe pkgs.lazygit}";
         cls = "clear";

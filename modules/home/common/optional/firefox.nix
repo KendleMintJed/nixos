@@ -1,6 +1,6 @@
 {inputs, ...}: {
   flake.homeModules.firefox = {
-    pkgs,
+    system,
     lib,
     ...
   }: let
@@ -43,7 +43,7 @@
       profiles.default.extensions = {
         force = true;
 
-        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
+        packages = with inputs.firefox-addons.packages.${system}; [
           sponsorblock
           firefox-color
         ];
