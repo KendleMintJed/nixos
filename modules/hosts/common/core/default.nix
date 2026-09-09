@@ -1,6 +1,7 @@
 {self, ...}: {
   flake.nixosModules.core = {
     pkgs,
+    lib,
     host,
     ...
   }: {
@@ -14,7 +15,30 @@
 
     environment.systemPackages = with pkgs; [
       devenv
+      ripgrep
+      fd
+      dust
+      tldr
+      eza
     ];
+
+    programs.bat = {
+      enable = true;
+      settings.theme = "Catppuccin Mocha";
+    };
+
+    programs.lazygit = {
+      enable = true;
+      settings.git = {
+        diffRenderers = [
+          {
+            colorArg = "always";
+            command = "${lib.getExe pkgs.delta} --paging=never --syntax-theme=\"Catppuccin Mocha\"";
+          }
+        ];
+        overrideGpg = true;
+      };
+    };
 
     nix.settings = {
       experimental-features = ["nix-command" "flakes"];
