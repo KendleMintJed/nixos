@@ -9,9 +9,8 @@
 
       ollieHardware
       core
-      grub
-      sddm
-      niri
+
+      desktop
     ];
 
     # boot.extraModprobeConfig = ''
