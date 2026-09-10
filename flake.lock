@@ -68,6 +68,22 @@
         "type": "github"
       }
     },
+    "catppuccin-yazi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787236804,
+        "narHash": "sha256-bwzEO8exoBwa19q+jnYjHkaamGl2mhfukIEhDfUCRGI=",
+        "owner": "catppuccin",
+        "repo": "yazi",
+        "rev": "d62802be39210ea10e54b3e3b09735c6cb9e57c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "yazi",
+        "type": "github"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -608,6 +624,7 @@
     },
     "root": {
       "inputs": {
+        "catppuccin-yazi": "catppuccin-yazi",
         "firefox-addons": "firefox-addons",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",

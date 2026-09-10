@@ -22,6 +22,10 @@
     nixcord.url = "github:kaylorben/nixcord";
     septabee.url = "github:Ap6661/septabee-flake";
     rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
+    catppuccin-yazi = {
+      url = "github:catppuccin/yazi";
+      flake = false;
+    };
   };
 
   outputs = inputs: let
