@@ -59,7 +59,6 @@
         };
         bracketed.enable = true;
         diff.enable = true;
-        files.enable = true;
         git.enable = true;
         jump.enable = true;
         jump2d.enable = true;
@@ -124,7 +123,10 @@
 
       visuals.nvim-web-devicons.enable = true;
 
-      utility.snacks-nvim.enable = true;
+      utility = {
+        snacks-nvim.enable = true;
+        yazi-nvim.enable = true;
+      };
     };
   };
 }

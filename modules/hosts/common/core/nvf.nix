@@ -4,6 +4,7 @@
   ...
 }: {
   flake.nixosModules.nvf = {
+    system,
     lib,
     pkgs,
     host,
@@ -19,6 +20,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      self.packages.${system}.yazi
       tree-sitter
       ripgrep
       imagemagick

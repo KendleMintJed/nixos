@@ -13,6 +13,12 @@
 
     programs.zoxide.enable = true;
 
+    programs.yazi = {
+      enable = true;
+      shellWrapperName = "y";
+      package = self.packages.${system}.yazi;
+    };
+
     programs.oh-my-posh = {
       enable = true;
       package = self.packages.${system}.oh-my-posh;
