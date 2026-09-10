@@ -10,7 +10,6 @@
       xdg
       stylix
       nvf
-      septabee
     ];
 
     environment.systemPackages = with pkgs; [
