@@ -5,6 +5,7 @@
       sddm
       niri
       septabee
+      steam
     ];
 
     environment.systemPackages = with pkgs; [
