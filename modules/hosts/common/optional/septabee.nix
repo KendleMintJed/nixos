@@ -1,7 +1,7 @@
 {inputs, ...}: {
-  flake.nixosModules.septabee = {system, ...}: {
-    imports = [inputs.septabee.nixosModules.${system}.default];
+  flake.nixosModules.septabee = {...}: {
+    imports = [inputs.septabee.nixosModules.default];
 
-    environment.systemPackages = [inputs.septabee.packages.${system}.default];
+    programs.septabee.enable = true;
   };
 }
