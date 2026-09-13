@@ -4,5 +4,10 @@
       enable = true;
       package = self.packages.${system}.niri;
     };
+
+    programs.noctalia = {
+      enable = true;
+      package = self.packages.${system}.noctalia-shell;
+    };
   };
 }
