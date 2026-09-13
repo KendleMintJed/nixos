@@ -1,7 +1,7 @@
-{...}: {
+{self, ...}: {
   flake.nixosModules.lazygit = {
-    pkgs,
     lib,
+    system,
     ...
   }: {
     programs.lazygit = {
@@ -10,7 +10,7 @@
         diffRenderers = [
           {
             colorArg = "always";
-            command = "${lib.getExe pkgs.delta} --paging=never --syntax-theme=\"Catppuccin Mocha\"";
+            command = "${lib.getExe self.packages.${system}.delta} --paging=never";
           }
         ];
         overrideGpg = true;

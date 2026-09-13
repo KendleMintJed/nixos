@@ -1,7 +1,7 @@
 {self, ...}: {
   flake.nixosModules.core = {
-    system,
     pkgs,
+    system,
     host,
     ...
   }: {
@@ -14,15 +14,19 @@
       lazygit
     ];
 
-    environment.systemPackages = with pkgs; [
-      self.packages.${system}.yazi
-      devenv
-      ripgrep
-      fd
-      dust
-      tldr
-      eza
-    ];
+    environment.systemPackages =
+      (with self.packages.${system}; [
+        yazi
+        delta
+      ])
+      ++ (with pkgs; [
+        devenv
+        ripgrep
+        fd
+        dust
+        tldr
+        eza
+      ]);
 
     nix.settings = {
       experimental-features = ["nix-command" "flakes"];
