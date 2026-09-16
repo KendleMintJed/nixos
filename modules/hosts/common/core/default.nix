@@ -42,13 +42,35 @@
       packages = with pkgs; [
         noto-fonts
         nerd-fonts.jetbrains-mono
-        twemoji-color-font
+        twitter-color-emoji
+        (twemoji-color-font.overrideAttrs (_: {
+          nativeBuildInputs = [pkgs.fontforge];
+
+          postInstall = ''
+            old="$out/share/fonts/truetype/TwitterColorEmoji-SVGinOT.ttf"
+            new="$out/share/fonts/truetype/Twemoji-SVGinOT.ttf"
+            fontforge -lang ff -c '
+              Open($1);
+              SelectWorthOutputting();
+              SetFontNames( \
+                "TwemojiSVG", \
+                "Twemoji SVG", \
+                "Twemoji SVG", \
+                "Regular" \
+              );
+              Generate($2);
+              Close();
+            ' $old $new
+            sed -i 's/Twitter Color Emoji/Twemoji SVG/g' $out/etc/fonts/conf.d/46-twemoji-color.conf
+            rm $old
+          '';
+        }))
       ];
       fontconfig.defaultFonts = {
-        serif = "Noto Serif";
-        sansSerif = "Noto Sans";
-        monospace = "JetBrainsMono Nerd Font";
-        emoji = "Twitter Color Emoji";
+        serif = ["Noto Serif"];
+        sansSerif = ["Noto Sans"];
+        monospace = ["JetBrainsMono Nerd Font"];
+        emoji = ["Twitter Color Emoji"];
       };
     };
 
