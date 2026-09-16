@@ -7,7 +7,7 @@
 
     programs.noctalia = {
       enable = true;
-      package = self.packages.${system}.noctalia-shell;
+      package = self.packages.${system}.noctalia;
     };
   };
 }
