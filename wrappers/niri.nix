@@ -9,7 +9,7 @@
       inherit pkgs;
 
       settings = let
-        noctaliaExe = lib.getExe self'.packages.noctalia-shell;
+        noctaliaExe = lib.getExe self'.packages.noctalia;
       in {
         spawn-at-startup = [
           noctaliaExe

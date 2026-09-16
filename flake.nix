@@ -19,6 +19,10 @@
       url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia-wrapper = {
+      url = "github:jasdeep-dhillon/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Applications
     home-manager = {

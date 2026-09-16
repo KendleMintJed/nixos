@@ -14,6 +14,16 @@
       lazygit
     ];
 
+    nix.settings = {
+      experimental-features = ["nix-command" "flakes"];
+      download-buffer-size = 524288000;
+    };
+
+    networking = {
+      hostName = host;
+      networkmanager.enable = true;
+    };
+
     environment.systemPackages =
       (with self.packages.${system}; [
         yazi
@@ -28,30 +38,36 @@
         eza
       ]);
 
-    nix.settings = {
-      experimental-features = ["nix-command" "flakes"];
-      download-buffer-size = 524288000;
-    };
-
-    networking = {
-      hostName = host;
-      networkmanager.enable = true;
+    fonts = {
+      packages = with pkgs; [
+        noto-fonts
+        nerd-fonts.jetbrains-mono
+        twemoji-color-font
+      ];
+      fontconfig.defaultFonts = {
+        serif = "Noto Serif";
+        sansSerif = "Noto Sans";
+        monospace = "JetBrainsMono Nerd Font";
+        emoji = "Twitter Color Emoji";
+      };
     };
 
     time.timeZone = "Europe/London";
 
-    i18n.defaultLocale = "en_GB.UTF-8";
+    i18n = {
+      defaultLocale = "en_GB.UTF-8";
 
-    i18n.extraLocaleSettings = {
-      LC_ADDRESS = "en_GB.UTF-8";
-      LC_IDENTIFICATION = "en_GB.UTF-8";
-      LC_MEASUREMENT = "en_GB.UTF-8";
-      LC_MONETARY = "en_GB.UTF-8";
-      LC_NAME = "en_GB.UTF-8";
-      LC_NUMERIC = "en_GB.UTF-8";
-      LC_PAPER = "en_GB.UTF-8";
-      LC_TELEPHONE = "en_GB.UTF-8";
-      LC_TIME = "en_GB.UTF-8";
+      extraLocaleSettings = {
+        LC_ADDRESS = "en_GB.UTF-8";
+        LC_IDENTIFICATION = "en_GB.UTF-8";
+        LC_MEASUREMENT = "en_GB.UTF-8";
+        LC_MONETARY = "en_GB.UTF-8";
+        LC_NAME = "en_GB.UTF-8";
+        LC_NUMERIC = "en_GB.UTF-8";
+        LC_PAPER = "en_GB.UTF-8";
+        LC_TELEPHONE = "en_GB.UTF-8";
+        LC_TIME = "en_GB.UTF-8";
+      };
     };
 
     console.keyMap = "uk";
@@ -61,10 +77,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-
-    fonts.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
-    ];
 
     system.stateVersion = "25.05";
   };
