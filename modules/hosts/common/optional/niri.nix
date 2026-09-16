@@ -9,5 +9,7 @@
       enable = true;
       package = self.packages.${system}.noctalia;
     };
+
+    programs.xwayland.enable = true;
   };
 }
