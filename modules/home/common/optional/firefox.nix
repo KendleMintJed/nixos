@@ -39,6 +39,7 @@
         "browser.sessionstore.resume_from_crash" = true;
         "ui.systemUsesDarkTheme" = 1;
         "extensions.autoDisableScopes" = 0;
+        "font.name-list.emoji" = "Twemoji SVG, Twemoji Mozilla";
       };
       profiles.default.extensions = {
         force = true;
