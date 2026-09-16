@@ -19,11 +19,14 @@
 
         prefer-no-csd = _: {};
 
+        debug.honor-xdg-activation-with-invalid-serial = _: {};
+
         layout = {
           gaps = 10;
           struts.top = 4;
           focus-ring.width = 2;
           border.off = _: {};
+          background-color = "transparent";
         };
 
         window-rules = [
@@ -43,6 +46,21 @@
             ];
             open-maximized = true;
           }
+          {
+            matches = [{app-id = "dev.noctalia.Noctalia";}];
+            open-floating = true;
+            default-column-width = {fixed = 1080;};
+            default-window-height = {fixed = 920;};
+            background-effect.blur = true;
+            draw-border-with-background = false;
+          }
+        ];
+
+        layer-rules = [
+          {
+            matches = [{namespace = "^noctalia-wallpaper";}];
+            place-within-backdrop = true;
+          }
         ];
 
         input = {
@@ -57,7 +75,7 @@
 
         binds = {
           "Mod+Return".spawn-sh = lib.getExe self'.packages.ghostty;
-          "Mod+R".spawn-sh = "${noctaliaExe} ipc call launcher toggle";
+          "Mod+R".spawn-sh = "${noctaliaExe} msg panel-toggle launcher";
           "Mod+Q".close-window = _: {};
           "Mod+H".focus-column-left = _: {};
           "Mod+L".focus-column-right = _: {};
@@ -71,6 +89,12 @@
           "Mod+F".maximize-column = _: {};
           "Mod+Shift+F".fullscreen-window = _: {};
           "Mod+Tab".toggle-overview = _: {};
+          # Audio & Brightness
+          XF86AudioRaiseVolume.spawn-sh = "${noctaliaExe} msg volume-up";
+          XF86AudioLowerVolume.spawn-sh = "${noctaliaExe} msg volume-down";
+          XF86AudioMute.spawn-sh = "${noctaliaExe} msg volume-mute";
+          XF86MonBrightnessUp.spawn-sh = "${noctaliaExe} msg brightness-up";
+          XF86MonBrightnessDown.spawn-sh = "${noctaliaExe} msg brightness-down";
         };
 
         gestures = {
