@@ -5,6 +5,7 @@
 
       settings = {
         font-size = 16;
+        font-family = ["monospace" "emoji"];
         theme = "Catppuccin Mocha";
         window-decoration = "none";
         background-opacity = 0.8;
