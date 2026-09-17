@@ -1,7 +1,11 @@
-{self, ...}: {
-  flake.configs.noctalia.settings = args @ {lib, ...}:
+{
+  self,
+  lib,
+  ...
+}: {
+  flake.configs.noctalia.settings = {pkgs, ...}:
     lib.foldl lib.recursiveUpdate {} (with self.configs.noctalia; [
-      (bar args)
+      (bar {inherit pkgs;})
       {
         theme = {
           source = "community";

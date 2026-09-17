@@ -3,14 +3,14 @@
   inputs,
   ...
 }: {
-  perSystem = args @ {pkgs, ...}: {
+  perSystem = {pkgs, ...}: {
     packages.neovim =
       (inputs.nvf.lib.neovimConfiguration {
         inherit pkgs;
 
         modules = [
           ({...}: {
-            config = self.lib.mkNvfConfig args;
+            config = self.lib.mkNvfConfig {inherit pkgs;};
           })
         ];
       }).neovim;
