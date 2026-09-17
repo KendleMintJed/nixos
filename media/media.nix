@@ -5,10 +5,11 @@
         type = with lib.types; attrsOf anything;
       };
     };
-
-    media = {
-      wallpaper = ./wallpaper.svg;
-      avatar = ./avatar.jpg;
+    config = {
+      media = {
+        wallpaper = ./wallpaper.svg;
+        avatar = ./avatar.jpg;
+      };
     };
   };
 }
