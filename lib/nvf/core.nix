@@ -1,8 +1,20 @@
-{lib, ...}: {
-  flake.configs.nvf.core = {...}: let
+{
+  self,
+  lib,
+  ...
+}: {
+  flake.configs.nvf.core = {pkgs, ...}: let
     mkLuaInline = lib.generators.mkLuaInline;
   in {
     vim = {
+      extraPackages = with pkgs; [
+        self.packages.${system}.yazi
+        tree-sitter
+        ripgrep
+        imagemagick
+        fd
+      ];
+
       options = {
         tabstop = 2;
         shiftwidth = 2;

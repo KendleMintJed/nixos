@@ -3,11 +3,11 @@
   lib,
   ...
 }: {
-  flake.lib.mkNvfConfig = {host ? null, ...}:
+  flake.lib.mkNvfConfig = args @ {host ? null, ...}:
     lib.recursiveUpdate
-    (self.configs.nvf.core {inherit host;})
+    (self.configs.nvf.core args)
     (
       lib.optionalAttrs (host != null)
-      (self.configs.nvf.hostSpesific {inherit host;})
+      (self.configs.nvf.hostSpesific args)
     );
 }
