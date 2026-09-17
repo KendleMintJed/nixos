@@ -1,9 +1,5 @@
 {self, ...}: {
-  flake.configs.noctalia.settings = args @ {
-    pkgs,
-    lib,
-    ...
-  }:
+  flake.configs.noctalia.settings = args @ {lib, ...}:
     lib.foldl lib.recursiveUpdate {} (with self.configs.noctalia; [
       (bar args)
       {
@@ -15,7 +11,7 @@
         wallpaper.default.path = self.media.wallpaper;
 
         shell = {
-          avatar_path = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          avatar_path = self.media.avatar;
           settings_window_translucent = true;
 
           screenshot.filename_pattern = "snapshot_%Y%m%d_%H%M%S";
