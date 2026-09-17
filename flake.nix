@@ -50,8 +50,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
+
+    # theme
     catppuccin-yazi = {
       url = "github:catppuccin/yazi";
+      flake = false;
+    };
+    catppuccin-delta = {
+      url = "github:catppuccin/delta";
       flake = false;
     };
   };
