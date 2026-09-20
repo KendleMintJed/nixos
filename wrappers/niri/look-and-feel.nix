@@ -2,6 +2,8 @@
   flake.configs.niri.look-and-feel = {pkgs, ...}: {
     prefer-no-csd = _: {};
 
+    hotkey-overlay.skip-at-startup = _: {};
+
     layout = {
       gaps = 10;
       struts.top = 4;
