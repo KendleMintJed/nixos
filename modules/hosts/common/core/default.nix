@@ -71,6 +71,7 @@
       };
     };
 
+    services.xserver.xkb.layout = "gb";
     console.keyMap = "uk";
 
     services.pcscd.enable = true;
