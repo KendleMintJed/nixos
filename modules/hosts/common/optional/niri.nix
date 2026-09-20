@@ -1,5 +1,7 @@
 {self, ...}: {
   flake.nixosModules.niri = {system, ...}: {
+    services.logind.settings.Login.HandlePowerKey = "ignore";
+
     programs.niri = {
       enable = true;
       package = self.packages.${system}.niri;
