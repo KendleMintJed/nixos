@@ -4,38 +4,101 @@
   ...
 }: {
   flake.configs.noctalia.settings = {pkgs, ...}:
-    lib.foldl lib.recursiveUpdate {} (with self.configs.noctalia; [
-      (bar {inherit pkgs;})
-      {
-        theme = {
-          source = "community";
-          community_palette = "Catppuccin Mocha Blue";
-        };
+    lib.foldl lib.recursiveUpdate {} (map (x: x {inherit pkgs;})
+      (with self.configs.noctalia; [
+        bar
+        lock-screen
+        ({...}: {
+          theme = {
+            source = "community";
+            community_palette = "Catppuccin Mocha Blue";
+          };
 
-        wallpaper.default.path = self.media.wallpaper;
+          wallpaper.default.path = self.media.wallpaper;
 
-        shell = {
-          avatar_path = self.media.avatar;
-          settings_window_translucent = true;
+          shell = {
+            setup_wizard_enabled = false;
 
-          screenshot.filename_pattern = "snapshot_%Y%m%d_%H%M%S";
+            avatar_path = self.media.avatar;
+            settings_window_translucent = true;
 
-          # security
-          external_ip_enabled = true;
+            screenshot.filename_pattern = "snapshot_%Y%m%d_%H%M%S";
 
-          session.power.suspend = "systemctl suspend-then-hibernate";
-        };
+            # security
+            external_ip_enabled = true;
 
-        control_center = {
-          # Layout
-          width = 900;
+            session = {
+              power.suspend = "systemctl suspend-then-hibernate";
+              actions = [
+                {
+                  action = "lock";
+                  countdown_seconds = 0.0;
+                  enabled = true;
+                  shortcut = "1";
+                  variant = "default";
+                }
+                {
+                  action = "logout";
+                  countdown_seconds = 0.0;
+                  enabled = true;
+                  shortcut = "2";
+                  variant = "default";
+                }
+                {
+                  action = "command";
+                  command = "systemctl hibernate";
+                  countdown_seconds = 0.0;
+                  enabled = true;
+                  glyph = "hibernate";
+                  label = "Hibernate";
+                  shortcut = "3";
+                  variant = "default";
+                }
+                {
+                  action = "reboot";
+                  countdown_seconds = 0.0;
+                  enabled = true;
+                  shortcut = "4";
+                  variant = "default";
+                }
+                {
+                  action = "shutdown";
+                  countdown_seconds = 0.0;
+                  enabled = true;
+                  shortcut = "5";
+                  variant = "destructive";
+                }
+              ];
+            };
 
-          # Navigation
-          sidebar = "full";
-          sidebar_section = "full";
-        };
+            panel = {
+              session_placement = "floating";
+              session_position = "center";
+            };
+          };
 
-        nightlight.enabled = true;
-      }
-    ]);
+          idle.behavior = {
+            behavior_order = ["lock" "lock-and-suspend"];
+            lock = {
+              enabled = true;
+              timeout = 300.0;
+            };
+            lock-and-suspend = {
+              enabled = true;
+              timeout = 360.0;
+            };
+          };
+
+          control_center = {
+            # Layout
+            width = 900;
+
+            # Navigation
+            sidebar = "full";
+            sidebar_section = "full";
+          };
+
+          nightlight.enabled = true;
+        })
+      ]));
 }
