@@ -468,6 +468,22 @@
         "type": "github"
       }
     },
+    "noctalia-palettes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789942580,
+        "narHash": "sha256-QmINtt5joHcLsfUowIoIc9eqg1KZXjxFwBi6Dn+LkxQ=",
+        "owner": "noctalia-dev",
+        "repo": "community-palettes",
+        "rev": "31b46f7e5af97f70bb6e46fab73ebf219a4d55ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "community-palettes",
+        "type": "github"
+      }
+    },
     "noctalia-wrapper": {
       "inputs": {
         "nixpkgs": [
@@ -566,6 +582,7 @@
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "noctalia-palettes": "noctalia-palettes",
         "noctalia-wrapper": "noctalia-wrapper",
         "nvf": "nvf",
         "rcheck": "rcheck",

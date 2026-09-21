@@ -10,8 +10,8 @@
         lock-screen
         ({...}: {
           theme = {
-            source = "community";
-            community_palette = "Catppuccin Mocha Blue";
+            source = "custom";
+            community_palette = "custom";
           };
 
           wallpaper.default.path = self.media.wallpaper;

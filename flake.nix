@@ -60,6 +60,10 @@
       url = "github:catppuccin/delta";
       flake = false;
     };
+    noctalia-palettes = {
+      url = "github:noctalia-dev/community-palettes";
+      flake = false;
+    };
   };
 
   outputs = inputs: let
