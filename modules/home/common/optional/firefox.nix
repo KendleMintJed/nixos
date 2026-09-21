@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.homeModules.firefox = {
     system,
     lib,
@@ -14,14 +18,7 @@
       b = hexToInt (builtins.elemAt pairs 2);
     };
 
-    catppuccin = {
-      base = "#1e1e2e";
-      mantle = "#181825";
-      crust = "#11111b";
-      text = "#cdd6f4";
-      blue = "#89b4fa";
-      overlay0 = "#6c7086";
-    };
+    catppuccin = lib.mapAttrs (_: hexToRgb) self.media.catppuccinMocha;
   in {
     programs.librewolf = {
       enable = true;
@@ -55,54 +52,54 @@
           theme = {
             title = "Catppuccin Mocha Blue";
 
-            colors = {
-              toolbar = hexToRgb catppuccin.base;
-              toolbar_text = hexToRgb catppuccin.text;
-              frame = hexToRgb catppuccin.crust;
-              tab_background_text = hexToRgb catppuccin.text;
+            colors = with catppuccin; {
+              toolbar = base;
+              toolbar_text = text;
+              frame = crust;
+              tab_background_text = text;
 
-              toolbar_field = hexToRgb catppuccin.mantle;
-              toolbar_field_text = hexToRgb catppuccin.text;
+              toolbar_field = mantle;
+              toolbar_field_text = text;
 
-              tab_line = hexToRgb catppuccin.blue;
-              popup = hexToRgb catppuccin.base;
-              popup_text = hexToRgb catppuccin.text;
+              tab_line = blue;
+              popup = base;
+              popup_text = text;
 
-              button_background_active = hexToRgb catppuccin.overlay0;
+              button_background_active = overlay0;
 
-              frame_inactive = hexToRgb catppuccin.crust;
+              frame_inactive = crust;
 
-              icons_attention = hexToRgb catppuccin.blue;
-              icons = hexToRgb catppuccin.blue;
+              icons_attention = blue;
+              icons = blue;
 
-              ntp_background = hexToRgb catppuccin.crust;
-              ntp_text = hexToRgb catppuccin.text;
+              ntp_background = crust;
+              ntp_text = text;
 
-              popup_border = hexToRgb catppuccin.blue;
-              popup_highlight_text = hexToRgb catppuccin.text;
-              popup_highlight = hexToRgb catppuccin.overlay0;
+              popup_border = blue;
+              popup_highlight_text = text;
+              popup_highlight = overlay0;
 
-              sidebar_border = hexToRgb catppuccin.blue;
-              sidebar_highlight_text = hexToRgb catppuccin.crust;
-              sidebar_highlight = hexToRgb catppuccin.blue;
-              sidebar_text = hexToRgb catppuccin.text;
-              sidebar = hexToRgb catppuccin.base;
+              sidebar_border = blue;
+              sidebar_highlight_text = crust;
+              sidebar_highlight = blue;
+              sidebar_text = text;
+              sidebar = base;
 
-              tab_background_separator = hexToRgb catppuccin.blue;
-              tab_loading = hexToRgb catppuccin.blue;
-              tab_selected = hexToRgb catppuccin.base;
-              tab_text = hexToRgb catppuccin.text;
+              tab_background_separator = blue;
+              tab_loading = blue;
+              tab_selected = base;
+              tab_text = text;
 
-              toolbar_bottom_separator = hexToRgb catppuccin.base;
-              toolbar_field_border_focus = hexToRgb catppuccin.blue;
-              toolbar_field_border = hexToRgb catppuccin.base;
+              toolbar_bottom_separator = base;
+              toolbar_field_border_focus = blue;
+              toolbar_field_border = base;
 
-              toolbar_field_focus = hexToRgb catppuccin.base;
-              toolbar_field_highlight_text = hexToRgb catppuccin.base;
-              toolbar_field_highlight = hexToRgb catppuccin.blue;
+              toolbar_field_focus = base;
+              toolbar_field_highlight_text = base;
+              toolbar_field_highlight = blue;
 
-              toolbar_field_separator = hexToRgb catppuccin.blue;
-              toolbar_vertical_separator = hexToRgb catppuccin.blue;
+              toolbar_field_separator = blue;
+              toolbar_vertical_separator = blue;
             };
 
             images = {
