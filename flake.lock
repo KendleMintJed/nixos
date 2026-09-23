@@ -303,6 +303,22 @@
         "type": "github"
       }
     },
+    "must-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789663891,
+        "narHash": "sha256-7SAtJ5RDSKoTaXMSiQSwoEpbmChZh9T4YTfZqei/3ek=",
+        "owner": "pdfrg",
+        "repo": "must",
+        "rev": "68cddb1a980855dcf0e0b45ed2b187ed2ab01640",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pdfrg",
+        "repo": "must",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -578,6 +594,7 @@
         "firefox-addons": "firefox-addons",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
+        "must-source": "must-source",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",

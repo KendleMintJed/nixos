@@ -11,6 +11,7 @@
       core
 
       desktop
+      must
     ];
 
     # boot.extraModprobeConfig = ''

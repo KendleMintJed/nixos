@@ -49,6 +49,10 @@
       url = "github:Ap6661/septabee-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    must-source = {
+      url = "github:pdfrg/must";
+      flake = false;
+    };
     rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
 
     # theme
