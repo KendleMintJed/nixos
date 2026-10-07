@@ -16,6 +16,13 @@
       self.packages.${system}.ghostty
       proton-vpn
       anki
+      qbittorrent
+      nicotine-plus
+      obsidian
+      wl-clipboard
+      yubioath-flutter
+      yubikey-manager
+      heroic
     ];
   };
 }
