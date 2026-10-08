@@ -101,7 +101,7 @@
           spotifyShareCommands.enable = true;
           startupTimings.enable = true;
           stickerPaste.enable = true;
-          summaries.enable = true;
+          # summaries.enable = true;
           superReactionTweaks.enable = true;
           translate.enable = true;
           typingIndicator.enable = true;
