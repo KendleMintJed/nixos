@@ -31,7 +31,7 @@
       backupFileExtension = "backup";
       extraSpecialArgs = {inherit host system;};
       users = {
-        "kendle" = self.homeModules.kendle;
+        "kendle" = self.homeModules.${host};
       };
     };
   };

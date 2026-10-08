@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.homeModules.kendle = {...}: {
+  flake.homeModules.ollie = {...}: {
     imports = with self.homeModules; [
       core
 

@@ -74,6 +74,8 @@
     services.xserver.xkb.layout = "gb";
     console.keyMap = "uk";
 
+    boot.initrd.systemd.enable = true;
+
     services.pcscd.enable = true;
     programs.gnupg.agent = {
       enable = true;
