@@ -12,6 +12,7 @@
       steam
     ];
 
+    nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
       self.packages.${system}.ghostty
       proton-vpn
