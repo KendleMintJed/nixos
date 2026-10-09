@@ -16,5 +16,7 @@
       enableManpages = true;
       settings = self.lib.mkNvfConfig {inherit pkgs host;};
     };
+
+    environment.sessionVariables.MANPAGER = "nvim +Man!";
   };
 }
