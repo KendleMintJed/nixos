@@ -11,7 +11,7 @@
         ({...}: {
           theme = {
             source = "custom";
-            community_palette = "custom";
+            custom_palette = "custom";
           };
 
           wallpaper.default.path = self.media.wallpaper;
