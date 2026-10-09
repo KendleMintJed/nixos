@@ -37,6 +37,7 @@
         dust
         tldr
         eza
+        wget
       ]);
 
     fonts = {
