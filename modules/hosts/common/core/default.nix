@@ -26,6 +26,7 @@
 
     environment.systemPackages =
       (with self.packages.${system}; [
+        git
         yazi
         delta
       ])
