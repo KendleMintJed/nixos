@@ -6,6 +6,7 @@
 
       desktop
       must
+      roblox
     ];
 
     boot.loader.grub.useOSProber = true;

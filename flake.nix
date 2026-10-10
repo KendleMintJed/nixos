@@ -23,6 +23,7 @@
       url = "github:jasdeep-dhillon/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     # Applications
     home-manager = {
