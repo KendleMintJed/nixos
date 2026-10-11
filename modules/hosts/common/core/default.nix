@@ -12,6 +12,7 @@
       nvf
       bat
       lazygit
+      concord
     ];
 
     nix.settings = {
