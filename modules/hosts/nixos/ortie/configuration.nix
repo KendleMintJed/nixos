@@ -7,6 +7,7 @@
       desktop
       must
       roblox
+      logitech
     ];
 
     boot.loader.grub.useOSProber = true;
