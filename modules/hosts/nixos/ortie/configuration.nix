@@ -8,6 +8,7 @@
       must
       roblox
       logitech
+      osu
     ];
 
     boot.loader.grub.useOSProber = true;
