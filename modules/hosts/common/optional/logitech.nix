@@ -1,6 +1,7 @@
 {...}: {
-  flake.nixosModules.logitech = {...}: {
+  flake.nixosModules.logitech = {pkgs, ...}: {
     hardware.logitech.enable = true;
-    programs.solaar.enable = true;
+    services.ratbagd.enable = true;
+    environment.systemPackages = with pkgs; [piper];
   };
 }
