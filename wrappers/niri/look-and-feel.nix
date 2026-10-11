@@ -21,6 +21,7 @@
     input = {
       warp-mouse-to-focus = _: {};
       focus-follows-mouse = _: {};
+      mouse.accel-profile = "flat";
     };
 
     cursor.xcursor-theme = "${pkgs.catppuccin-cursors.mochaDark}/share/icons/catppuccin-mocha-dark-cursors";
