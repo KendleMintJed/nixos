@@ -1,4 +1,8 @@
-{self, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.desktop = {
     pkgs,
     system,
@@ -12,9 +16,13 @@
       steam
     ];
 
+    nixpkgs.overlays = [inputs.affinity.overlays.default];
+
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
       self.packages.${system}.ghostty
+
+      affinity-v3
       proton-vpn
       anki
       qbittorrent
