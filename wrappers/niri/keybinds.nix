@@ -18,6 +18,9 @@
       "Mod+L".focus-column-right = _: {};
       "Mod+J".focus-workspace-down = _: {};
       "Mod+K".focus-workspace-up = _: {};
+
+      "Mod+Alt+H".focus-monitor-next = _: {};
+      "Mod+Alt+L".focus-monitor-previous = _: {};
       # # Move
       "Mod+Shift+H".move-column-left = _: {};
       "Mod+Shift+L".move-column-right = _: {};
