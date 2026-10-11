@@ -16,6 +16,7 @@
     environment.systemPackages = with pkgs; [
       self.packages.${system}.ghostty
 
+      mpv
       proton-vpn
       anki
       qbittorrent
