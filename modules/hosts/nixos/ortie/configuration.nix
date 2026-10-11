@@ -8,6 +8,7 @@
       must
       roblox
       logitech
+      affinity
       osu
     ];
 
