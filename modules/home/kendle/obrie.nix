@@ -6,6 +6,5 @@
       firefox
       nixcord
     ];
-    home.stateVersion = "24.11";
   };
 }

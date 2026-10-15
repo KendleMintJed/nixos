@@ -3,6 +3,5 @@
     imports = with self.homeModules; [
       core
     ];
-    home.stateVersion = "24.11";
   };
 }

@@ -4,5 +4,6 @@
       zsh
       gtk
     ];
+    home.stateVersion = "24.11";
   };
 }
