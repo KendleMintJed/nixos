@@ -24,8 +24,9 @@
       obsidian
       wl-clipboard
       yubioath-flutter
-      yubikey-manager
       heroic
     ];
+
+    services.printing.enable = true;
   };
 }

@@ -37,15 +37,10 @@
 
     environment.systemPackages = [
       self.packages.${system}.ghostty
-      pkgs.yubikey-manager
     ];
 
     virtualisation.docker.enable = true;
 
-    programs.yubikey-touch-detector.enable = true;
-
-    services.pcscd.enable = true;
-    programs.gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };

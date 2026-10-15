@@ -10,6 +10,7 @@
       ollieHardware
       core
 
+      laptop
       desktop
       must
     ];
@@ -26,60 +27,17 @@
       }
     ];
 
-    services.upower.enable = true;
-
-    boot.initrd.systemd.enable = true;
-    services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
-    systemd.sleep.settings.Sleep = {
-      HibernateDelaySec = "1h";
-      SuspendState = "mem";
-    };
-
     nixpkgs.config.allowUnfree = true;
     services.xserver.videoDrivers = ["nvidia"];
-    hardware = {
-      nvidia = {
-        modesetting.enable = true;
-        open = false;
-        prime = {
-          offload = {
-            enable = true;
-            enableOffloadCmd = true;
-          };
+    hardware.nvidia = {
+      modesetting.enable = true;
+      open = false;
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
         };
       };
-      bluetooth = {
-        enable = true;
-        powerOnBoot =
-          true;
-      };
-      graphics = {
-        enable = true;
-        enable32Bit = true;
-      };
-    };
-
-    services.printing.enable = true;
-
-    security.rtkit.enable = true;
-
-    services.pulseaudio.enable = false;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    programs.git.enable = true;
-
-    programs.yubikey-touch-detector.enable = true;
-
-    programs.ssh.startAgent = false;
-    services.pcscd.enable = true;
-    programs.gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
     };
   };
 }
