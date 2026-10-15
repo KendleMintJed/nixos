@@ -40,9 +40,5 @@
     ];
 
     virtualisation.docker.enable = true;
-
-      enable = true;
-      enableSSHSupport = true;
-    };
   };
 }
