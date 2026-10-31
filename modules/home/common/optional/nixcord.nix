@@ -11,6 +11,7 @@
         themeLinks = ["https://catppuccin.github.io/discord/dist/catppuccin-mocha-blue.theme.css"];
         plugins = {
           accountPanelServerProfile.enable = true;
+          addAttachments.enable = true;
           alwaysExpandRoles.enable = true;
           betterFolders.enable = true;
           betterGifPicker.enable = true;
@@ -63,7 +64,6 @@
           noMosaic.enable = true;
           noOnboardingDelay.enable = true;
           noPendingCount.enable = true;
-          noServerEmojis.enable = true;
           noTypingAnimation.enable = true;
           noUnblockToJump.enable = true;
           openInApp.enable = true;
