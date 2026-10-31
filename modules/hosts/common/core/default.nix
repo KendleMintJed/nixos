@@ -34,8 +34,6 @@
       networkmanager.enable = true;
     };
 
-    boot.initrd.systemd.enable = true;
-
     environment.systemPackages =
       (with self.packages.${system}; [
         git
