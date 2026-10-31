@@ -42,6 +42,7 @@
       ])
       ++ (with pkgs; [
         devenv
+        openvpn
         ripgrep
         fd
         dust
