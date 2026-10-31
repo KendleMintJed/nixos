@@ -10,6 +10,7 @@
       logitech
       affinity
       osu
+      minecraft
     ];
 
     boot.loader.grub.useOSProber = true;
