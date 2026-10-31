@@ -1,5 +1,9 @@
 {lib, ...}: {
-  flake.configs.niri.keybinds = {self', ...}: {
+  flake.configs.niri.keybinds = {
+    self',
+    pkgs,
+    ...
+  }: {
     input = {
       disable-power-key-handling = _: {};
       touchpad = {
@@ -34,6 +38,7 @@
       # Utility
       "Mod+Return".spawn-sh = lib.getExe self'.packages.ghostty;
       "Mod+Shift+S".screenshot = _: {};
+      "Mod+P".spawn-sh = "${lib.getExe pkgs.hyprpicker} -b | ${pkgs.wl-clipboard}/bin/wl-copy";
 
       # Noctalia
 
