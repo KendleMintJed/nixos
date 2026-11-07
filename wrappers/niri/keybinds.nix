@@ -5,12 +5,22 @@
     ...
   }: {
     input = {
-      disable-power-key-handling = _: {};
       touchpad = {
         tap = _: {};
         natural-scroll = _: {};
       };
     };
+    extraConfig = ''
+      input {
+        disable-power-key-handling
+      }
+
+      binds {
+        XF86PowerOff {
+          spawn-sh "${lib.getExe self'.packages.noctalia} msg panel-toggle session"
+        }
+      }
+    '';
     binds = let
       noctaliaExe = lib.getExe self'.packages.noctalia;
     in {
@@ -48,7 +58,6 @@
       "Mod+V".spawn-sh = "${noctaliaExe} msg panel-toggle clipboard";
       "Mod+period".spawn-sh = "${noctaliaExe} msg panel-toggle launcher /emo";
       "Mod+M".spawn-sh = "${noctaliaExe} msg panel-toggle control-center media";
-      XF86PowerOff.spawn-sh = "${noctaliaExe} msg panel-toggle session";
       # Audio & Brightness
       XF86AudioRaiseVolume.spawn-sh = "${noctaliaExe} msg volume-up";
       XF86AudioLowerVolume.spawn-sh = "${noctaliaExe} msg volume-down";
