@@ -1,12 +1,8 @@
 {self, ...}: {
-  flake.nixosModules.niri = {
-    lib,
-    system,
-    ...
-  }: {
+  flake.nixosModules.niri = {system, ...}: {
     services.logind.settings.Login = {
-      HandlePowerKey = lib.mkForce "ignore";
-      HandlePowerKeyLongPress = lib.mkForce "ignore";
+      HandlePowerKey = "ignore";
+      HandlePowerKeyLongPress = "ignore";
     };
 
     programs.niri = {
