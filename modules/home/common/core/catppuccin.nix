@@ -8,7 +8,6 @@
       accent = "blue";
 
       qt5ct.enable = true;
-      firefox.enable = true;
     };
   };
 }

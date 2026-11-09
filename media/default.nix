@@ -9,6 +9,7 @@
       media = {
         wallpaper = ./wallpaper.svg;
         avatar = ./avatar.jpg;
+        librewolfCatppuccin = ./librewolf-catppuccin.svg;
       };
     };
   };
