@@ -46,8 +46,10 @@
 
       profiles.default = {
         search = {
-          default = "duckduckgo";
           force = true;
+          default = "duckduckgo";
+          privateDefault = "ddg";
+          order = ["duckduckgo" "ddg"];
           engines = {
             duckduckgo = {
               name = "DuckDuckGo";
@@ -89,7 +91,6 @@
               definedAliases = ["@nw"];
             };
 
-            ddg.metaData.hidden = true;
             mojeek.metaData.hidden = true;
             startpage.metaData.hidden = true;
           };
