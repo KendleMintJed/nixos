@@ -28,7 +28,7 @@
           crashHandler.enable = true;
           disableCallIdle.enable = true;
           experiments.enable = true;
-          expressionCloner.enable = true;
+          expressionManager.enable = true;
           fakeNitro.enable = true;
           favoriteEmojiFirst.enable = true;
           # favoriteGifSearch.enable = true;

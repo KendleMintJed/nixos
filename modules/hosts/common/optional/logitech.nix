@@ -1,6 +1,6 @@
 {...}: {
   flake.nixosModules.logitech = {pkgs, ...}: {
-    hardware.logitech.enable = true;
+    hardware.logitech.wireless.enable = true;
     services.ratbagd.enable = true;
     environment.systemPackages = with pkgs; [piper];
   };

@@ -2,6 +2,7 @@
   flake.homeModules.gtk = {
     pkgs,
     system,
+    config,
     ...
   }: let
     themeName = "catppuccin-mocha-blue-standard";
@@ -22,6 +23,8 @@
         name = "catppuccin-mocha-dark-cursors";
         package = pkgs.catppuccin-cursors.mochaDark;
       };
+
+      gtk4.theme = config.gtk.theme;
     };
   };
 }
