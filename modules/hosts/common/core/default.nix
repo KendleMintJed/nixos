@@ -15,6 +15,7 @@
       audio
       xdg
       yubikey
+      polkit
       stylix
 
       # applications

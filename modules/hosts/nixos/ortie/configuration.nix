@@ -5,6 +5,7 @@
       core
 
       desktop
+      inputRemapper
       must
       roblox
       logitech
