@@ -42,6 +42,10 @@
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin-gtk = {
+      url = "git+https://github.com/VanillaDaFur/catppuccin-gtk.git?submodules=1";
+      flake = false;
+    };
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
