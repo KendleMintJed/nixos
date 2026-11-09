@@ -16,7 +16,7 @@
       xdg
       yubikey
       polkit
-      stylix
+      catppuccin
 
       # applications
       nvf
