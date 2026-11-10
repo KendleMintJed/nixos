@@ -38,14 +38,6 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    catppuccin-gtk = {
-      url = "git+https://github.com/VanillaDaFur/catppuccin-gtk.git?submodules=1";
-      flake = false;
-    };
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,6 +57,14 @@
     rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
 
     # theme
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    catppuccin-gtk = {
+      url = "git+https://github.com/VanillaDaFur/catppuccin-gtk.git?submodules=1";
+      flake = false;
+    };
     catppuccin-yazi = {
       url = "github:catppuccin/yazi";
       flake = false;
