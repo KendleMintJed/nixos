@@ -23,6 +23,10 @@
       url = "github:jasdeep-dhillon/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    deno2nix = {
+      url = "github:hzrd149/deno2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
     # Applications
@@ -71,6 +75,10 @@
     };
     catppuccin-delta = {
       url = "github:catppuccin/delta";
+      flake = false;
+    };
+    catppuccin-userstyles = {
+      url = "github:catppuccin/userstyles";
       flake = false;
     };
     noctalia-palettes = {

@@ -84,6 +84,22 @@
         "url": "https://github.com/VanillaDaFur/catppuccin-gtk.git"
       }
     },
+    "catppuccin-userstyles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794140589,
+        "narHash": "sha256-PdSHzDlgtUOZXdQRy4KC38uxeLLtzxt6dGPlSKdD9+A=",
+        "owner": "catppuccin",
+        "repo": "userstyles",
+        "rev": "a572540347086ba9165fa98da690296d86f9d6e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "userstyles",
+        "type": "github"
+      }
+    },
     "catppuccin-yazi": {
       "flake": false,
       "locked": {
@@ -128,6 +144,26 @@
       "original": {
         "owner": "ipetkov",
         "repo": "crane",
+        "type": "github"
+      }
+    },
+    "deno2nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789244144,
+        "narHash": "sha256-/OD70+kdREsiHwp271iwBnFOeOnRo/sfB7+BFXDESE4=",
+        "owner": "hzrd149",
+        "repo": "deno2nix",
+        "rev": "9c2916fc8cc410308f0f5dba2a9a3f3a5283a780",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hzrd149",
+        "repo": "deno2nix",
         "type": "github"
       }
     },
@@ -700,7 +736,9 @@
         "catppuccin": "catppuccin",
         "catppuccin-delta": "catppuccin-delta",
         "catppuccin-gtk": "catppuccin-gtk",
+        "catppuccin-userstyles": "catppuccin-userstyles",
         "catppuccin-yazi": "catppuccin-yazi",
+        "deno2nix": "deno2nix",
         "firefox-addons": "firefox-addons",
         "flake-parts": "flake-parts_2",
         "home-manager": "home-manager",
