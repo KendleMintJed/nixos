@@ -81,6 +81,10 @@
       url = "github:catppuccin/userstyles";
       flake = false;
     };
+    catppuccin-userstyles-yt-fix = {
+      url = "https://github.com/catppuccin/userstyles/pull/2341.patch";
+      flake = false;
+    };
     noctalia-palettes = {
       url = "github:noctalia-dev/community-palettes";
       flake = false;

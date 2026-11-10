@@ -11,10 +11,7 @@
         src = inputs.catppuccin-userstyles;
 
         patches = [
-          (pkgs.fetchpatch {
-            url = "https://github.com/catppuccin/userstyles/pull/2341.patch";
-            hash = "sha256-QR6kdsvPir6p8qvtfrVt3qAE7HTRYfvL/nZKIieazZQ=";
-          })
+          inputs.catppuccin-userstyles-yt-fix
         ];
       };
 
