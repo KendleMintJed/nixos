@@ -14,6 +14,7 @@
       locale
       audio
       xdg
+      nh
       yubikey
       polkit
       catppuccin
