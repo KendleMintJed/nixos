@@ -18,7 +18,7 @@
 
       mpv
       proton-vpn
-      anki
+      # anki # disabled due to build error
       qbittorrent
       nicotine-plus
       obsidian

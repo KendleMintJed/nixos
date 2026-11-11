@@ -19,10 +19,6 @@
       url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia-wrapper = {
-      url = "github:jasdeep-dhillon/nix-wrapper-modules";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     deno2nix = {
       url = "github:hzrd149/deno2nix";
       inputs.nixpkgs.follows = "nixpkgs";

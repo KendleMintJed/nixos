@@ -8,7 +8,7 @@
     lib,
     ...
   }: {
-    packages.noctalia = inputs.noctalia-wrapper.wrappers.noctalia.wrap {
+    packages.noctalia = inputs.wrapper-modules.wrappers.noctalia.wrap {
       inherit pkgs;
       settings = self.configs.noctalia.settings {inherit pkgs;};
       colors =
