@@ -3,7 +3,7 @@
     imports = with self.homeModules; [
       zsh
       gtk
-      catppuccin
+      qt
     ];
     home.stateVersion = "24.11";
   };
