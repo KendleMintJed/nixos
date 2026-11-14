@@ -2,9 +2,18 @@
   flake.nixosModules.fonts = {
     pkgs,
     system,
+    lib,
+    config,
     ...
   }: {
-    fonts = {
+    options.optionals.desktop.fonts = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = config.optionals.desktop.enable;
+      };
+    };
+
+    config.fonts = lib.mkIf config.optionals.desktop.fonts.enable {
       packages = with pkgs; [
         noto-fonts
         nerd-fonts.jetbrains-mono

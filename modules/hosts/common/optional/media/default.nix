@@ -9,6 +9,7 @@
 
     imports = with self.nixosModules; [
       affinity
+      concord
       must
       septabee
     ];

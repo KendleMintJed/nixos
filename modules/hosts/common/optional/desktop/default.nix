@@ -18,6 +18,8 @@
     };
 
     imports = with self.nixosModules; [
+      audio
+      fonts
       sddm
       niri
     ];

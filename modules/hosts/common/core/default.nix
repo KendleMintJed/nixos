@@ -10,9 +10,7 @@
       kendle
 
       # system
-      fonts
       locale
-      audio
       xdg
       nh
       yubikey
@@ -23,7 +21,6 @@
       nvf
       bat
       lazygit
-      concord
     ];
 
     nix.settings = {
