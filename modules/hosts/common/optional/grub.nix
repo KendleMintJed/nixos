@@ -1,7 +1,22 @@
 {...}: {
-  flake.nixosModules.grub = {pkgs, ...}: {
-    # Bootloader.
-    boot.loader = {
+  flake.nixosModules.grub = {
+    pkgs,
+    lib,
+    config,
+    ...
+  }: {
+    options.optionals.grub = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+      };
+      useOSProber = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+    };
+
+    config.boot.loader = lib.mkIf config.optionals.grub.enable {
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
 
@@ -9,6 +24,7 @@
         enable = true;
         device = "nodev";
         efiSupport = true;
+        useOSProber = config.optionals.grub.useOSProber;
 
         theme = pkgs.stdenv.mkDerivation {
           pname = "distro-grub-themes";

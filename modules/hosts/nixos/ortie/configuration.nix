@@ -3,24 +3,21 @@
     imports = with self.nixosModules; [
       ortieHardware
       core
-
-      desktop
-      inputRemapper
-      must
-      roblox
-      logitech
-      affinity
-      osu
-      minecraft
+      optionals
     ];
 
-    boot.loader.grub.useOSProber = true;
+    optionals = {
+      grub.useOSProber = true;
+      nvidia = {
+        enable = true;
+        package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+      };
 
-    services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia = {
-      modesetting.enable = true;
-      open = false;
-      package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+      logitech.enable = true;
+      inputRemapper.enable = true;
+
+      media.autoEnable = true;
+      games.autoEnable = true;
     };
   };
 }

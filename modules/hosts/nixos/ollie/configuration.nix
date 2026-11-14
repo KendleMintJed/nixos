@@ -9,16 +9,18 @@
 
       ollieHardware
       core
-
-      laptop
-      desktop
-      must
+      optionals
     ];
 
-    # boot.extraModprobeConfig = ''
-    #  options xe force_probe=9a60
-    #  options i915 force_probe=!9a60
-    # '';
+    optionals = {
+      grub.useOSProber = true;
+      laptop.enable = true;
+      nvidia.enable = true;
+
+      media.must.enable = true;
+
+      games.steam.enable = true;
+    };
 
     swapDevices = [
       {
@@ -26,18 +28,5 @@
         size = 32 * 1024;
       }
     ];
-
-    nixpkgs.config.allowUnfree = true;
-    services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia = {
-      modesetting.enable = true;
-      open = false;
-      prime = {
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-      };
-    };
   };
 }

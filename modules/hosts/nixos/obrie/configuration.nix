@@ -3,11 +3,13 @@
     imports = with self.nixosModules; [
       obrieHardware
       core
-
-      laptop
-      desktop
-
-      must
+      optionals
     ];
+
+    optionals = {
+      laptop.enable = true;
+      media.must.enable = true;
+      games.steam.enable = true;
+    };
   };
 }

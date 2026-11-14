@@ -2,7 +2,6 @@
   flake.nixosModules.oliveConfig = {
     system,
     modulesPath,
-    pkgs,
     ...
   }: {
     imports = with self.nixosModules; [
