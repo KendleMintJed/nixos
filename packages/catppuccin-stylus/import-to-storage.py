@@ -11,6 +11,7 @@ with open(src) as f:
 storage = {
     # Required for Stylus to read style-N entries from extension storage.
     "dbInChromeStorage": True,
+    "lastUpdateTime": 1794671316201,
 }
 
 style_id = 1
@@ -25,20 +26,25 @@ for item in items:
     style["id"] = style_id
     style.setdefault(
         "_id",
-        str(uuid.uuid5(
-            uuid.NAMESPACE_URL,
-            "stylus:" + str(
-                style.get("originalDigest")
-                or style.get("updateUrl")
-                or style.get("name")
-                or style_id
-            ),
-        )),
+        str(
+            uuid.uuid5(
+                uuid.NAMESPACE_URL,
+                "stylus:"
+                + str(
+                    style.get("originalDigest")
+                    or style.get("updateUrl")
+                    or style.get("name")
+                    or style_id
+                ),
+            )
+        ),
     )
 
     storage[f"style-{style_id}"] = style
     style_id += 1
 
-with open(dst, "w") as f:
-    json.dump(storage, f, indent=2)
+storage["settings"]["updateInterval"] = 0
+
+with open(dst, "w", encoding="utf-8") as f:
+    json.dump(storage, f, ensure_ascii=False)
     f.write("\n")
