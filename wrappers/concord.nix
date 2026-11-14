@@ -8,7 +8,9 @@
     }: {
       imports = [wlib.modules.default];
       config = {
-        package = lib.mkDefault pkgs.concord-tui;
+        package = lib.mkDefault (pkgs.concord-tui.overrideAttrs (old: {
+          buildInputs = old.buildInputs ++ [pkgs.zstd];
+        }));
         runtimePkgs = [pkgs.mpv];
       };
     });
