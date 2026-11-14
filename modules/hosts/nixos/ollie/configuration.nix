@@ -14,8 +14,10 @@
 
     optionals = {
       grub.useOSProber = true;
-      laptop.enable = true;
-      nvidia.enable = true;
+      hardware = {
+        laptop.enable = true;
+        nvidia.enable = true;
+      };
 
       media.must.enable = true;
 

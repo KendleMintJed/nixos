@@ -4,14 +4,14 @@
     config,
     ...
   }: {
-    options.optionals.laptop = {
+    options.optionals.hardware.laptop = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
       };
     };
 
-    config = lib.mkIf config.optionals.laptop.enable {
+    config = lib.mkIf config.optionals.hardware.laptop.enable {
       services.upower.enable = true;
       hardware.bluetooth = {
         enable = true;

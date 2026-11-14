@@ -4,14 +4,14 @@
     config,
     ...
   }: {
-    options.optionals.nvidia = {
+    options.optionals.hardware.nvidia = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
       };
       laptop = lib.mkOption {
         type = lib.types.bool;
-        default = config.optionals.laptop.enable;
+        default = config.optionals.hardware.laptop.enable;
       };
       package = lib.mkOption {
         type = with lib.types; (nullOr package);
@@ -19,18 +19,18 @@
       };
     };
 
-    config = lib.mkIf config.optionals.nvidia.enable {
+    config = lib.mkIf config.optionals.hardware.nvidia.enable {
       services.xserver.videoDrivers = ["nvidia"];
       hardware.nvidia = {
         modesetting.enable = true;
         open = false;
-        prime = lib.mkIf config.optionals.nvidia.laptop {
+        prime = lib.mkIf config.optionals.hardware.nvidia.laptop {
           offload = {
             enable = true;
             enableOffloadCmd = true;
           };
         };
-        package = with config.optionals.nvidia; (lib.mkIf (package != null) package);
+        package = with config.optionals.hardware.nvidia; (lib.mkIf (package != null) package);
       };
     };
   };

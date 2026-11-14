@@ -7,7 +7,7 @@
     ];
 
     optionals = {
-      laptop.enable = true;
+      hardware.laptop.enable = true;
       media.must.enable = true;
       games.steam.enable = true;
     };

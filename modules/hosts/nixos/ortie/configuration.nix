@@ -8,13 +8,15 @@
 
     optionals = {
       grub.useOSProber = true;
-      nvidia = {
-        enable = true;
-        package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-      };
+      hardware = {
+        nvidia = {
+          enable = true;
+          package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+        };
 
-      logitech.enable = true;
-      inputRemapper.enable = true;
+        logitech.enable = true;
+        inputRemapper.enable = true;
+      };
 
       media.autoEnable = true;
       games.autoEnable = true;

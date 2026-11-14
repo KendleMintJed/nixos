@@ -3,13 +3,10 @@
     imports = with self.nixosModules; [
       desktop
       games
+      hardware
       media
 
       grub
-      inputRemapper
-      laptop
-      logitech
-      nvidia
     ];
   };
 }
