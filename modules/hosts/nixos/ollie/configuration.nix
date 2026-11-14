@@ -19,7 +19,10 @@
         nvidia.enable = true;
       };
 
-      media.must.enable = true;
+      media = {
+        must.enable = true;
+        concord.enable = true;
+      };
 
       games.steam.enable = true;
     };

@@ -8,7 +8,7 @@
 
     optionals = {
       hardware.laptop.enable = true;
-      media.must.enable = true;
+      media.concord.enable = true;
       games.steam.enable = true;
     };
   };
