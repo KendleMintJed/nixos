@@ -2,9 +2,9 @@
   flake.homeModules.ortie = {...}: {
     imports = with self.homeModules; [
       core
-
-      firefox
-      nixcord
+      optionals
     ];
+
+    optionals.media.autoEnable = true;
   };
 }
