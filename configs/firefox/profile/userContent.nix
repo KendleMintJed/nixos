@@ -119,6 +119,9 @@
           --scrollbar-color: ${text}: !important;
 
           --row-striped-background: ${base} !important;
+
+          --content-search-handoff-ui-background-color: ${base} !important;
+          --content-search-handoff-ui-unfocused-border-color: transparent !important;
         }
       }
     '';

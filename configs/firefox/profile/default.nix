@@ -6,6 +6,7 @@
   }:
     with self.configs.firefoxModules.profileModules; {
       search = search {inherit pkgs;};
+      bookmarks = bookmarks {};
 
       extensions = extensions {inherit lib;};
 
