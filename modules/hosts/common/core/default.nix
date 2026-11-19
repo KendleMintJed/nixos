@@ -11,7 +11,6 @@
 
       # system
       locale
-      xdg
       nh
       yubikey
       polkit

@@ -22,6 +22,7 @@
       fonts
       sddm
       niri
+      xdg
     ];
 
     config = lib.mkIf config.optionals.desktop.enable {

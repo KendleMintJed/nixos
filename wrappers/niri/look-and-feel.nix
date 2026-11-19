@@ -30,26 +30,24 @@
       {
         geometry-corner-radius = 10;
         clip-to-geometry = true;
+        open-maximized = true;
       }
       {
-        matches = [{app-id = "^com\\.mitchellh\\.ghostty$";}];
+        matches = [
+          {app-id = "^com\\.mitchellh\\.ghostty$";}
+          {app-id = "dev.noctalia.Noctalia";}
+        ];
         background-effect.blur = true;
         draw-border-with-background = false;
       }
       {
         matches = [
-          {app-id = "^librewolf$";}
-          {app-id = "^discord$";}
+          {app-id = "dev.noctalia.Noctalia";}
+          {title = "termfilechooser";}
         ];
-        open-maximized = true;
-      }
-      {
-        matches = [{app-id = "dev.noctalia.Noctalia";}];
         open-floating = true;
-        default-column-width = {fixed = 1080;};
+        default-column-width = {fixed = 1635;};
         default-window-height = {fixed = 920;};
-        background-effect.blur = true;
-        draw-border-with-background = false;
       }
     ];
 

@@ -10,6 +10,7 @@
     imports = with self.homeModules; [
       gtk
       qt
+      xdg
     ];
   };
 }
