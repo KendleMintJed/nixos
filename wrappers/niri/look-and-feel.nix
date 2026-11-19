@@ -20,7 +20,7 @@
 
     input = {
       warp-mouse-to-focus = _: {};
-      focus-follows-mouse = _: {};
+      focus-follows-mouse = _: {max-scroll-amount = "0%";};
       mouse.accel-profile = "flat";
     };
 
