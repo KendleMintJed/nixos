@@ -49,6 +49,7 @@
       # Utility
       "Mod+Return".spawn-sh = lib.getExe self'.packages.ghostty;
       "Mod+W".spawn-sh = lib.getExe pkgs.librewolf;
+      "Mod+E".spawn-sh = lib.getExe pkgs.kdePackages.dolphin;
       "Mod+S".screenshot-screen = _: {};
       "Mod+Shift+S".screenshot = _: {};
       "Mod+Alt+S".screenshot-window = _: {};

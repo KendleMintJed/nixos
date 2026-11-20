@@ -32,6 +32,8 @@
 
         wl-clipboard
         mpv
+        nsxiv
+        kdePackages.dolphin
         yubioath-flutter
         keepassxc
         proton-vpn
