@@ -40,7 +40,7 @@
         qbittorrent
         nicotine-plus
         obsidian
-        # anki # disabled due to build error
+        anki
         heroic
       ]);
 

@@ -50,10 +50,7 @@
       url = "github:pdfrg/must";
       flake = false;
     };
-    affinity = {
-      url = "github:mrshmllow/affinity-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    affinity.url = "github:mrshmllow/affinity-nix";
     rcheck.url = "git+ssh://git@github.com/KendleMintJed/rcheck.git";
 
     # theme

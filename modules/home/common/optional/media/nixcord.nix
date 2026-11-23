@@ -18,7 +18,7 @@
 
       programs.nixcord = {
         enable = true;
-        discord.vencord.enable = true;
+        discord.equicord.enable = true;
         config = {
           themeLinks = ["https://catppuccin.github.io/discord/dist/catppuccin-mocha-blue.theme.css"];
           plugins = {
@@ -43,16 +43,13 @@
             expressionManager.enable = true;
             fakeNitro.enable = true;
             favoriteEmojiFirst.enable = true;
-            # favoriteGifSearch.enable = true;
             fixCodeblockGap.enable = true;
             fixImagesQuality.enable = true;
             fixSpotifyEmbeds.enable = true;
             fixYoutubeEmbeds.enable = true;
             forceOwnerCrown.enable = true;
             friendInvites.enable = true;
-            # friendsSince.enable = true;
             fullSearchContext.enable = true;
-            fullUserInChatbox.enable = true;
             gameActivityToggle.enable = true;
             gifPaste.enable = true;
             greetStickerPicker.enable = true;
@@ -61,7 +58,7 @@
             imageLink.enable = true;
             imageZoom.enable = true;
             implicitRelationships.enable = true;
-            # invisibleChat.enable = true;
+            invisibleChat.enable = true;
             keepCurrentChannel.enable = true;
             loadingQuotes.enable = true;
             memberCount.enable = true;
@@ -107,13 +104,10 @@
             showMeYourName.enable = true;
             showTimeoutDuration.enable = true;
             silentMessageToggle.enable = true;
-            # sortFriendRequests.enable = true;
-            # spotifyControls.enable = true;
             spotifyCrack.enable = true;
             spotifyShareCommands.enable = true;
             startupTimings.enable = true;
             stickerPaste.enable = true;
-            # summaries.enable = true;
             superReactionTweaks.enable = true;
             translate.enable = true;
             typingIndicator.enable = true;
@@ -124,7 +118,6 @@
             userVoiceShow.enable = true;
             validReply.enable = true;
             validUser.enable = true;
-            vencordToolbox.enable = true;
             viewIcons.enable = true;
             viewRaw.enable = true;
             voiceDownload.enable = true;
