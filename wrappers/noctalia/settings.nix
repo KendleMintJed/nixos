@@ -24,6 +24,8 @@
 
             screenshot.filename_pattern = "snapshot_%Y%m%d_%H%M%S";
 
+            font_family = "Noto Sans";
+
             # security
             external_ip_enabled = true;
 
