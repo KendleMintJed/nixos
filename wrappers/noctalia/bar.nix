@@ -74,6 +74,9 @@
         font_scale = 0.87;
         font_weight = 600;
         capsule_padding = 5;
+
+        empty_color = "secondary_container";
+        occupied_color = "primary_container";
       };
       active_window = {
         # widget

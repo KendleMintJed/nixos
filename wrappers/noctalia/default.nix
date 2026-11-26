@@ -15,7 +15,10 @@
         lib.recursiveUpdate
         (lib.importJSON "${inputs.noctalia-palettes}/Catppuccin Mocha Blue/Catppuccin Mocha Blue.json")
         {
-          dark.mTertiary = self.media.catppuccinMocha.green;
+          dark = with self.media.catppuccinMocha; {
+            secondary = sky;
+            tertiary = green;
+          };
         };
     };
   };
