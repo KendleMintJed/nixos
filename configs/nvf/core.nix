@@ -98,19 +98,28 @@
         formatOnSave = true;
         trouble.enable = true;
         lspconfig.enable = true;
+        inlayHints.enable = true;
+      };
+
+      debugger.nvim-dap = {
+        enable = true;
+        ui.enable = true;
       };
 
       languages = {
         enableFormat = true;
         enableTreesitter = true;
         enableExtraDiagnostics = true;
+        enableDAP = true;
 
         nix.enable = true;
+
         rust = {
           enable = true;
           extensions.crates-nvim.enable = true;
         };
         python.enable = true;
+        json.enable = true;
         markdown = {
           enable = true;
           format.type = ["rumdl"];
